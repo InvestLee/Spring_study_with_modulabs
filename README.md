@@ -2,7 +2,7 @@
 ---
 # 목차
 - 1. 스프링 설치법(For IntelliJ)
-- 2. 
+- 2. Maven vs Gradle
 
 ---
 # 내용
