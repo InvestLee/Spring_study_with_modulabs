@@ -12,14 +12,14 @@
 ![image](https://user-images.githubusercontent.com/101415950/192459186-e7f13542-1063-451d-b9aa-1dc41ff08650.png)
 
 - Project - Gradle Project
-- Spring Boot - SNAPSHOT, M1 같은 미정식 버전을 제외하고 최신 버전 사용
+- Spring Boot - SNAPSHOT, M1 같은 미정식 버전을 제외한 최신 버전 사용 권장
 - Language - Java
 - Packaging - Jar
-- Java - 11
+- Java - 현재 자신의 개발 환경에 설치된 Java 버전 사용 권장
 
 [Project Metadata]
-- Group - hello
-- Artifact - hello-spring
+- Group - 기업의 도메인 명 설정 (기업과 관련되지 않은 프로젝트 수행 시 자유롭게 설정)
+- Artifact - 빌드 결과물의 이름 설정
 
 [Dependencies]
 - Spring Web
