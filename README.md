@@ -3,6 +3,8 @@
 # 목차
 - 1. 스프링 설치법(For IntelliJ)
 - 2. Maven vs Gradle
+- 3. 정적 콘텐츠 vs MVC vs API
+- 4. DI, IoC
 
 ---
 # 내용
