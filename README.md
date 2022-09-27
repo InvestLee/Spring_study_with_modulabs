@@ -44,7 +44,7 @@
 
 5. IntelliJ 상단바의 파일(File)에서 설정(Preferences)을 클릭
 6. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 적색 박스와 같이 설정
- - Build and run using - Gradle -> IntelliJ IDEA
+ - Build and run using - Gradle  IntelliJ IDEA
  - Run tests using - Gradle -> IntelliJ IDEA
 
 위 과정을 통해 IntelliJ에서 스프링 프로젝트를 생성할 수 있음()
