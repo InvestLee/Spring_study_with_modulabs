@@ -26,6 +26,6 @@
 - Spring Web
 - Thymeleaf
 
-설정이 완료되면  Generate 버튼을 클릭하여 프로젝트 생성
+설정이 완료되면  Generate 버튼을 클릭하여 zip파일을 다운받은 후 압축 해제
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
