@@ -44,15 +44,16 @@
 
 #### <Gradle을 통해서 실행 하는 방식에서 Java로 바로 실행하는 방식으로 설정하여 실행 속도를 높이는 방법>
 
-<img src="https://user-images.githubusercontent.com/101415950/192466398-a142b547-27a3-4d93-a754-960410c65a5b.png" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/101415950/192476018-d1ffc1dd-0427-4fa0-8fc5-385e6638200a.png" width="80%" height="80%">
 
 1. IntelliJ 상단바의 파일(File)에서 설정(Preferences)을 클릭
-2. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 빌드 및 실행을 설정
+2. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 적색 박스와 같이 설정
 
-   -> 다음을 사용하여 빌드 및 실행(Build and run using) - Gradle ⇨ IntelliJ IDEA
+   -> 다음을 사용하여 빌드 및 실행(Build and run using) - IntelliJ IDEA
  
-   -> 다음을 사용하여 테스트 실행(Run tests using) - Gradle ⇨ IntelliJ IDEA
+   -> 다음을 사용하여 테스트 실행(Run tests using) - IntelliJ IDEA
 
+   -> Gradle JVM - 설치된 자바 버전 선택
 
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
