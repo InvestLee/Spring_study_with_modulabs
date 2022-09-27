@@ -48,8 +48,8 @@
 
 1. IntelliJ 상단바의 파일(File)에서 설정(Preferences)을 클릭
 2. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 적색 박스와 같이 빌드 및 실행을 설정
- - 다음을 사용하여 빌드 및 실행(Build and run using) - Gradle ⇨ IntelliJ IDEA
- - 다음을 사용하여 테스트 실행(Run tests using) - Gradle ⇨ IntelliJ IDEA
+ -- 다음을 사용하여 빌드 및 실행(Build and run using) - Gradle ⇨ IntelliJ IDEA
+ -- 다음을 사용하여 테스트 실행(Run tests using) - Gradle ⇨ IntelliJ IDEA
 
 
 
