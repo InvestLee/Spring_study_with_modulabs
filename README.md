@@ -11,6 +11,7 @@
 
 ![image](https://user-images.githubusercontent.com/101415950/192459186-e7f13542-1063-451d-b9aa-1dc41ff08650.png)
 
+[Basic Setting]
 - Project - Gradle Project
 - Spring Boot - SNAPSHOT, M1 같은 미정식 버전을 제외한 최신 버전 사용 권장
 - Language - Java
