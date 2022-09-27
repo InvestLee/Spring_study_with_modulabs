@@ -28,7 +28,7 @@
 
 설정이 완료되면  Generate 버튼을 클릭하여 zip파일을 다운받은 후 압축 해제
 
-[IntelliJ에서 스프링 프로젝트 파일 열기]
+#### IntelliJ에서 스프링 프로젝트 파일 열기
 
 ![image](https://user-images.githubusercontent.com/101415950/192464593-05687cb8-63fc-4f75-b479-444342a26928.png)
 
@@ -44,7 +44,7 @@
 
 위 과정을 통해 IntelliJ에서 스프링 프로젝트를 생성할 수 있음
 
-[Gradle을 통해서 실행 하는 방식에서 Java로 바로 실행하는 방식으로 설정하여 실행 속도를 높이는 방법]
+#### Gradle을 통해서 실행 하는 방식에서 Java로 바로 실행하는 방식으로 설정하여 실행 속도를 높이는 방법
 1. IntelliJ 상단바의 파일(File)에서 설정(Preferences)을 클릭
 2. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 적색 박스와 같이 빌드 및 실행을 설정
  - 다음을 사용하여 빌드 및 실행(Build and run using) - Gradle ⇨ IntelliJ IDEA
