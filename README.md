@@ -35,13 +35,12 @@
 1. IntelliJ 상단바의 파일(File)에서 열기(Open)을 클릭
 2. 압축을 푼 스프링 프로젝트 폴더에서 build.gradle 선택 후 확인 버튼 클릭
 
-![image](https://user-images.githubusercontent.com/101415950/192465073-0e5bcfa3-1049-4fc8-a63d-3e6e6865b05b.png){: width="50%" height="50%"}
+<img src="https://user-images.githubusercontent.com/101415950/192465073-0e5bcfa3-1049-4fc8-a63d-3e6e6865b05b.png" width="50%" height="50%">
 
 3. 위와 같은 안내메시지가 팝업되면 프로젝트로 열기 클릭
 4. 약간의 시간을 소요하여 자동으로 다운로드가 진행됨을 확인
 
 ![image](https://user-images.githubusercontent.com/101415950/192466398-a142b547-27a3-4d93-a754-960410c65a5b.png)
-<img src="https://user-images.githubusercontent.com/101415950/192466398-a142b547-27a3-4d93-a754-960410c65a5b.png" width="50%" height="50%">
 
 위 과정을 통해 IntelliJ에서 스프링 프로젝트를 생성할 수 있음
 
