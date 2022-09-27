@@ -8,6 +8,7 @@
 # 내용
 ### 1. 스프링 설치법(For IntelliJ)
 스프링 부트 스타터 사이트에서 스프링 프로젝트 생성(https://start.spring.io)
+
 (이클립스로 설치하는 경우는 https://wikidocs.net/160375 페이지 참조)
 
 ![image](https://user-images.githubusercontent.com/101415950/192459186-e7f13542-1063-451d-b9aa-1dc41ff08650.png)
