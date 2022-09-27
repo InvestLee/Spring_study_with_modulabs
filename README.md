@@ -57,5 +57,28 @@
 
    -> Gradle JVM - 설치된 자바 버전 선택
 
+---
+
+[maven]
+```
+<dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+      </dependency>
+<dependencies> 
+```
+
+[gradle]
+```
+dependencies {
+      implementation 'org.springframework.boot:spring-boot-starter'
+      testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+```
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
