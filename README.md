@@ -28,6 +28,25 @@
 
 설정이 완료되면  Generate 버튼을 클릭하여 zip파일을 다운받은 후 압축 해제
 
+[IntelliJ에서 스프링 프로젝트 파일 열기]
+
 ![image](https://user-images.githubusercontent.com/101415950/192464593-05687cb8-63fc-4f75-b479-444342a26928.png)
+
+1. IntelliJ 상단바의 파일(File)에서 열기(Open)을 클릭
+2. 압축을 푼 스프링 프로젝트 폴더에서 build.gradle 선택 후 확인 버튼 클릭
+
+![image](https://user-images.githubusercontent.com/101415950/192465073-0e5bcfa3-1049-4fc8-a63d-3e6e6865b05b.png)
+
+3. 위와 같은 안내메시지가 팝업되면 프로젝트로 열기 클릭
+4. 약간의 시간을 소요하여 자동으로 다운로드가 진행됨을 확인
+
+![image](https://user-images.githubusercontent.com/101415950/192466398-a142b547-27a3-4d93-a754-960410c65a5b.png)
+
+5. IntelliJ 상단바의 파일(File)에서 설정(Preferences)을 클릭
+6. 빌드, 실행, 배포(Build, Execution, Deployment)에서 빌드 도구(Build Tools)를 통해 Gradle을 클릭한 뒤 적색 박스와 같이 설정
+ - Build and run using - Gradle -> IntelliJ IDEA
+ - Run tests using - Gradle -> IntelliJ IDEA
+
+위 과정을 통해 IntelliJ에서 스프링 프로젝트를 생성할 수 있음()
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
