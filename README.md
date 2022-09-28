@@ -102,9 +102,15 @@ Package, Artifact, Version 으로 구성
 - Artifact : 라이브러리의 고유한 명칭
 - version : 버전 명칭(생략 시 최신 버전)
 
+라이브러리 앞에 적용된 명령어는 라이브러리가 적용될 Scope를 의미
+- implementation : 전 범위에 적용
+- testImplementation : 테스트 시에만 적용
+- debugimplementation : 디버그 모드에서만 적용
+- androidTestimplementation : 안드로이스 테스트 시에만 적용
+
 implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래와 같음
 
--> org.springframework.boot 패키지에서 spring-boot-starter 라이브러리의 최신버전을 전범위에 걸쳐서 적용 
+-> org.springframework.boot 패키지에서 spring-boot-starter 라이브러리의 최신버전을 전범위에 적용 
 
 ---
 ### 3. 정적 콘텐츠 vs MVC vs API
