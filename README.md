@@ -95,7 +95,7 @@ dependencies {
 
 #### <maven이 아닌 gradle을 선택한 이유>
 
-- maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로 grooby를 사용하는 gradle에 비해 설정 내용이 길어지고\ 가독성이 떨어짐
+- maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로   grooby를 사용하는 gradle에 비해 설정 내용이 길어지고 가독성이 떨어짐
 
 #### <gradle 라이브러리 구성>
 
