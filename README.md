@@ -152,9 +152,17 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 <img src="https://user-images.githubusercontent.com/101415950/192735277-c8a88b0f-3eff-4130-879f-8e4360e035ba.png" width="40%" height="40%">
 
-1. src/main/java
+1. src/main/java   
+
+java 파일을 작성하기 위한 공간으로 Controller, Service, Repository, Entity 파일 등이 속한 디렉토리   
+
+이 디렉토리에 속한 <프로젝트명> + Application.java 파일은 프로그램 시작을 담당하는 파일
 
 2. src/main/resources
+
+java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 
+
+static, templates 그리고 application.properties 파일이 기본적으로 생성
 
 3. static
 
