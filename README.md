@@ -178,6 +178,18 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 #### <MVC 방식>
 
+시스템을 모델, 뷰, 컨트롤러 3가지 역할로 구조화한 방식(정보처리기사 참고)   
+
+각 부분은 별도의 컴포넌트로 분리되어 있음
+
+뷰를 여러 개 만들 수 있으므로 사용자의 요구가 발생하면 시스템이 이를 처리하고 반응하는 대화형 애플리케이션에 적합
+
+<img src="https://user-images.githubusercontent.com/101415950/192724212-ea883698-3ea5-4806-a803-8c7f53566980.png" width="80%" height="80%">
+
+1. Model : 내부 비즈니스 로직에 해당
+2. View : 사용자에게 정보 표시
+3. controller : 사용자로부터 받은 입력 처리
+
 <img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
 
 #### <API 방식>
