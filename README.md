@@ -61,6 +61,7 @@
    -> Gradle JVM - 설치된 자바 버전 선택
 
 ---
+### 2. Maven vs Gradle
 
 [maven]
 ```
@@ -83,5 +84,16 @@ dependencies {
       testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 ```
+
+---
+### 3. 정적 콘텐츠 vs MVC vs API
+
+---
+### 4. Controller, Service , Repository
+
+
+---
+### 5. DI, IoC
+
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
