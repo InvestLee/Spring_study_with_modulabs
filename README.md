@@ -108,10 +108,12 @@ dependencies {
 
 #### <maven이 아닌 gradle을 선택한 이유>
 
-- maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로   
-  grooby를 사용하는 gradle에 비해 설정 내용이 길어지고 가독성이 떨어짐
-- gradle이 maven에 비해 10~100배 가량 빌드 속도가 빠름
-- 
+- maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로 구조화하기 쉽지만 문서의 양이 비대해지므로   
+  JVM 기반의 grooby를 사용하는 gradle에 비해 설정 내용이 길어지고 가독성이 떨어짐
+- gradle이 바뀐 파일들만 빌드하는 점진적 빌드 방식과 빌드 결과물을 저장하여 한번 빌드된 프로젝트의 다음 빌드는 매우 적은 시간 소요되는 
+  Daemon Process 그리고 Build Cashe를 사용하므로 maven에 비해 10~100배 가량 빌드 속도가 빠름
+- maven은 라이브러리가 추가되거나 각각의 라이브러리가 서로 다른 버전의 라이브러리를 참조하는 종속성을 가지고 있을 경우 관리가 어려움
+- gradle은 설정 주입시 프로젝트의 조건을 체크할 수 있으므로 프로젝트 별로 유연하게 설정할 수 있음
 
 #### <gradle 라이브러리 구성>
 
