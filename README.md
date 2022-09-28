@@ -1,7 +1,7 @@
 # backend_study_starting_with_spring_modulabs
 ---
 # 목차
-- [1. 스프링 설치법(For IntelliJ)](#1-스프링-설치법(for-intellij))
+- [1. 스프링 설치법(For IntelliJ)](#1-스프링-설치법-for-intellij-)
 - [2. Maven vs Gradle](#2-maven-vs-gradle)
 - 3. 정적 콘텐츠 vs MVC vs API
 - 4. Controller, Service , Repository
