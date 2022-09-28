@@ -156,9 +156,9 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 2. src/main/resources
 
-3. templates
+3. static
 
-4. static
+4. templates
 
 5. application.properties
 
