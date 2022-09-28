@@ -148,6 +148,8 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 ---
 ### 3. 스프링 프로젝트 구조
 
+#### <전체적인 프로젝트 구조>
+
 ![image](https://user-images.githubusercontent.com/101415950/192732319-7f909df1-9f3b-415f-b021-79cac2104b65.png)
 
 
