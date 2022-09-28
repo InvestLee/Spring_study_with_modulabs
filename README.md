@@ -150,7 +150,7 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 #### <전체적인 프로젝트 구조>
 
-<img src="https://user-images.githubusercontent.com/101415950/192735277-c8a88b0f-3eff-4130-879f-8e4360e035ba.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/101415950/192735277-c8a88b0f-3eff-4130-879f-8e4360e035ba.png" width="30%" height="30%">
 
 - src/main/java
 
