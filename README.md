@@ -149,7 +149,7 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 #### <정적 콘텐츠>
 
-[resources/static/hello-static.html]
+- resources/static/hello-static.html에 다음과 같이 작성 후 스프링을 실행   
 ```
 <!DOCTYPE HTML>
 <html>
@@ -162,7 +162,10 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 </body>
 </html>
 ```
+- URL에 http://localhost:8080/hello-static.html을 입력하면 하기 사진과 같은 결과가 도출
+![image](https://user-images.githubusercontent.com/101415950/192709042-9d1dd8e3-0ae5-40b3-9527-c3860ef04bbd.png)
 
+- 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192704982-ba9520e4-253e-414d-8e89-eddd04963f52.png" width="80%" height="80%">
 
 #### <MVC 방식>
