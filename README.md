@@ -97,7 +97,7 @@ dependencies {
 
 - maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로   
   grooby를 사용하는 gradle에 비해 설정 내용이 길어지고 가독성이 떨어짐
-- ㅇ
+- gradle이 maven에 비해 10~100배 가량 빌드 속도가 빠름
 - 
 
 #### <gradle 라이브러리 구성>
