@@ -147,6 +147,18 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 ---
 ### 3. 정적 콘텐츠 vs MVC vs API
 
+#### <정적 콘텐츠>
+
+<img src="https://user-images.githubusercontent.com/101415950/192704982-ba9520e4-253e-414d-8e89-eddd04963f52.png" width="80%" height="80%">
+
+#### <MVC>
+
+<img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
+   
+#### <API>
+   
+<img src="https://user-images.githubusercontent.com/101415950/192705493-8abdce7a-558a-4b1f-9f39-82585aa7f0c5.png" width="80%" height="80%">
+
 ---
 ### 4. Controller, Service , Repository
 
