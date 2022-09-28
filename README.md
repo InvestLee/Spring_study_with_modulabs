@@ -69,6 +69,8 @@
 ---
 ### 2. Maven vs Gradle
 
+하기 코드는 프로젝트에 필요한 라이브러리를 정의할 때 Maven과 Gradle의 작성법에 대한 차이를 예시로 듬
+
 [maven]
 ```
 <dependencies>
