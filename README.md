@@ -149,6 +149,10 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 #### <정적 콘텐츠>
 
+덧셈, 뺄셈 등 연산과 같이 사용자의 행동에 의해 변화하는 동적 콘텐츠가 아닌    
+
+한번 정해놓으면 변하지 않고 계속 유지되는 콘텐츠로 응답하는 방식
+
 - resources/static/hello-static.html에 다음과 같이 작성 후 스프링을 실행   
 ```
 <!DOCTYPE HTML>
@@ -167,6 +171,10 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 - 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192704982-ba9520e4-253e-414d-8e89-eddd04963f52.png" width="80%" height="80%">
+
+1. 웹브라우저에서 http://localhost:8080/hello-static.html 주소를 Tomcat(WAS)으로 전송 
+2. Tomcat(WAS)에서 스프링 컨테이너로 해당 요청을 전송하여 hello-static 관련 Controller를 찾는 과정을 수행
+3. Controller가 없는 경우 resources에 있는 hello-static 관련 html 파일을 찾아 웹 브라우저에 전송하여 화면에 출력
 
 #### <MVC 방식>
 
