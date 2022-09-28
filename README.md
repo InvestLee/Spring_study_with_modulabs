@@ -93,6 +93,19 @@ dependencies {
 }
 ```
 
+#### <maven이 아닌 gradle을 선택한 이유>
+
+#### <gradle 라이브러리 구성>
+
+Package, Artifact, Version 으로 구성
+- group : 소스코드가 작성된 패키지 명
+- Artifact : 라이브러리의 고유한 명칭
+- version : 버전 명칭(생략 시 최신 버전)
+
+implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래와 같음
+
+-> org.springframework.boot 패키지에서 spring-boot-starter 라이브러리의 최신버전을 전범위에 걸쳐서 적용 
+
 ---
 ### 3. 정적 콘텐츠 vs MVC vs API
 
