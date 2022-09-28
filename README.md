@@ -1,8 +1,8 @@
 # backend_study_starting_with_spring_modulabs
 ---
 # 목차
-- [1. 스프링 설치법(For IntelliJ)](#1.스프링-설치법(for-intellij))
-- [2. Maven vs Gradle](#2.maven-vs-gradle)
+- [1. 스프링 설치법(For IntelliJ)](#1-스프링-설치법(for-intellij))
+- [2. Maven vs Gradle](#2-maven-vs-gradle)
 - 3. 정적 콘텐츠 vs MVC vs API
 - 4. Controller, Service , Repository
 - 5. DI, IoC
@@ -15,7 +15,7 @@
 
 ※ 인프런에서 김영한 강사님의 강의를 기반으로 작성된 글입니다.
 
-### 1.스프링 설치법(For IntelliJ)
+### 1 스프링 설치법(For IntelliJ)
 스프링 부트 스타터 사이트에서 스프링 프로젝트 생성(https://start.spring.io)
 
 (이클립스로 설치하는 경우는 https://wikidocs.net/160375 링크 참조)
@@ -67,7 +67,7 @@
    -> Gradle JVM - 설치된 자바 버전 선택
 
 ---
-### 2.Maven vs Gradle
+### 2 Maven vs Gradle
 
 maven과 gradle은 빌드(소스 코드 파일을 컴퓨터에서 실행할 수 있는 독립 소프트웨어 가공물(Artifact)로 변환시키는 과정)를 자동화하는 Tool
 
