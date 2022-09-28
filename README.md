@@ -186,11 +186,37 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 <img src="https://user-images.githubusercontent.com/101415950/192724212-ea883698-3ea5-4806-a803-8c7f53566980.png" width="80%" height="80%">
 
-1. Model : 내부 비즈니스 로직에 해당
-2. View : 사용자에게 정보 표시
-3. controller : 사용자로부터 받은 입력 처리
+1. Model : 추출, 저장, 삭제 등 데이터를 처리하는 역할 (내부 비즈니스 로직)
+2. View : 사용자의 요청에 의해 가공된 정보를 출력하는 역할 (사용자 인터페이스)
+3. controller : 사용자의 요청(url)에 적절한 비즈니스 로직(서비스)을 호출하고 그 결과를 받아 뷰로 전달   
 
+- controller 구현
+```
+@Controller
+public class HelloController {
+   @GetMapping("hello-mvc")
+   public String helloMvc(@RequestParam("name") String name, Model model) {
+      model.addAttribute("name", name);
+      return "hello-template";
+   }
+}
+```
+
+- View 구현(resources/static/hello-template.html)   
+```
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
+</html>
+```
+
+- 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
+
+1. 웹브라우저에서 http://localhost:8080/hello-static.html 주소를 Tomcat(WAS)으로 전송 
+2. Tomcat(WAS)에서 스프링 컨테이너로 해당 요청을 전송하여 hello-static 관련 Controller를 찾는 과정을 수행
+3. Controller가 없는 경우 resources에 있는 hello-static 관련 html 파일을 찾아 웹 브라우저에 전송하여 화면에 출력
 
 #### <API 방식>
    
