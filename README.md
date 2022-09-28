@@ -69,6 +69,8 @@
 ---
 ### 2. Maven vs Gradle
 
+maven과 gradle은 빌드(소스 코드 파일을 컴퓨터에서 실행할 수 있는 독립 소프트웨어 가공물(Artifact)로 변환시키는 과정)를 자동화하는 Too
+
 하기 코드는 프로젝트에 필요한 라이브러리를 정의할 때 Maven과 Gradle의 작성법에 대한 차이를 예시로 듬
 
 [maven]
