@@ -3,13 +3,14 @@
 # 목차
 - 1. 스프링 설치법(For IntelliJ)
 - 2. Maven vs Gradle
-- 3. 정적 콘텐츠 vs MVC vs API
-- 4. Controller, Service , Repository
-- 5. DI, IoC
-- 6. Test
-- 7. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
-- 8. DB 접근 기술(JDBC, JPA)
-- 9. AOP
+- 3. 스프링 프로젝트 구조
+- 4. 정적 콘텐츠 vs MVC vs API
+- 5. Controller, Service , Repository
+- 6. DI, IoC
+- 7. Test
+- 8. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
+- 9. DB 접근 기술(JDBC, JPA)
+- 10. AOP
 ---
 # 내용
 
@@ -145,7 +146,10 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 -> org.springframework.boot 패키지에서 spring-boot-starter 라이브러리의 최신버전을 전범위에 적용 
 
 ---
-### 3. 정적 콘텐츠 vs MVC vs API
+### 3. 스프링 프로젝트 구조
+
+---
+### 4. 정적 콘텐츠 vs MVC vs API
 
 #### <정적 콘텐츠>
 
@@ -223,25 +227,25 @@ public class HelloController {
 <img src="https://user-images.githubusercontent.com/101415950/192705493-8abdce7a-558a-4b1f-9f39-82585aa7f0c5.png" width="80%" height="80%">
    
 ---
-### 4. Controller, Service , Repository
+### 5. Controller, Service , Repository
 
 ---
-### 5. DI, IoC
+### 6. DI, IoC
 
 ---
-### 6. Test
+### 7. Test
 
 테스트 코드의 의미는 작성된 코드를 자동으로 테스트해주는 코드를 추가로 작성한 것
 
 테스트 코드를 이용하여 작성한 모든 코드를 한번에 테스트할 수 있으므로 직접 프로그램을 실행하여 테스트하는 것보다 효율적임
 
 ---
-### 7. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
+### 8. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
 
 ---
-### 8. DB 접근 기술(JDBC, JPA)
+### 9. DB 접근 기술(JDBC, JPA)
 
 ---
-### 9. AOP
+### 10. AOP
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
