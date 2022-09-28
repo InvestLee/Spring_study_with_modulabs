@@ -152,7 +152,20 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 <img src="https://user-images.githubusercontent.com/101415950/192735277-c8a88b0f-3eff-4130-879f-8e4360e035ba.png" width="40%" height="40%">
 
-- src/main/java
+1. src/main/java
+
+2. src/main/resources
+
+3. templates
+
+4. static
+
+5. application.properties
+
+6. src/test/java
+
+7. build.gradle
+
 
 ---
 ### 4. 정적 콘텐츠 vs MVC vs API
