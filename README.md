@@ -6,7 +6,10 @@
 - 3. 정적 콘텐츠 vs MVC vs API
 - 4. Controller, Service , Repository
 - 5. DI, IoC
-
+- 6. Test
+- 7. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
+- 8. DB 접근 기술(JDBC, JPA)
+- 9. AOP
 ---
 # 내용
 ### 1. 스프링 설치법(For IntelliJ)
@@ -91,9 +94,19 @@ dependencies {
 ---
 ### 4. Controller, Service , Repository
 
-
 ---
 ### 5. DI, IoC
 
+---
+### 6. Test
+
+---
+### 7. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
+
+---
+### 8. DB 접근 기술(JDBC, JPA)
+
+---
+### 9. AOP
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
