@@ -149,6 +149,20 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 #### <정적 콘텐츠>
 
+[resources/static/hello-static.html]
+```
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>static content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+정적 컨텐츠 입니다.
+</body>
+</html>
+```
+
 <img src="https://user-images.githubusercontent.com/101415950/192704982-ba9520e4-253e-414d-8e89-eddd04963f52.png" width="80%" height="80%">
 
 #### <MVC 방식>
