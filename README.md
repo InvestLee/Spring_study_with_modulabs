@@ -389,7 +389,7 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 
 기본적으로 설정을 바꾸지 않는 이상 Spring Container에 명칭이 동일한 객체 등록 불가능(싱글톤 패턴)
 
-<br/><br/>
+<br/>
 
 - DI를 사용해야 하는 이유
 
@@ -404,7 +404,7 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 ```
 //1. 양복 클래스
 public class Suit{
-    private name;
+    private String name;
 
     public Suit(){
     }
@@ -431,7 +431,7 @@ public class HumanB{
 ```
 //3. 양복 클래스에서 양복 객체에 메이커 명을 지어준다면,
 public class Suit{
-    private name;
+    private String name;
 
     public Suit(String name){
         this.name = name;
@@ -457,7 +457,7 @@ public class HumanB{
 ```
 
 
-제어 순서 : A생성 -> B생성 -> C생성 -> .....
+제어 순서 : 사람 -> 양복 -> 양복 명칭 -> .....
 
 <br/>
 
@@ -465,7 +465,7 @@ public class HumanB{
 ```
 //1. 양복 클래스(양복 객체 한 번만 생성)
 public class Suit{
-    private name;
+    private String name;
 
     public Suit(){
     }
@@ -493,7 +493,7 @@ public class HumanB{
 ```
 //3. 양복 클래스에서 양복 객체에 메이커 명을 지어줘도
 public class Suit{
-    private name;
+    private String name;
 
     public Suit(String name){
         this.name = name;
@@ -519,7 +519,7 @@ public class HumanB{
 }
 ```
 
-제어 순서 : ....C생성 -> B생성 -> A생성
+제어 순서 : ....양복 명칭 -> 양복 -> 
 
  <br/><br/>
 
