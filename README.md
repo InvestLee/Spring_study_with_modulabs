@@ -360,6 +360,15 @@ public class HelloController {
 ---
 ### 6. DI, IoC
 
+#### <의존성 주입(DI : Dependency Injection)>
+
+- Field Injection(필드 주입)
+
+- Setter Injection(수정자 주입)
+
+- Construction Injection(생성자 주입)
+
+
 싱글톤 패턴
 
 ---
