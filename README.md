@@ -268,7 +268,26 @@ public class HelloController {
 
 
 #### <API 방식>
-   
+
+- controller 구현(@ResponseBody 문자 반환)
+```
+@Controller
+public class HelloController {
+
+	@GetMapping("hello-string")
+	@ResponseBody
+	public String helloString(@RequestParam("name") String name) {
+		return "hello " + name;
+	}
+}
+```
+
+- controller 구현(@ResponseBody 객체 반환)
+```
+
+```
+
+
 <img src="https://user-images.githubusercontent.com/101415950/192705493-8abdce7a-558a-4b1f-9f39-82585aa7f0c5.png" width="80%" height="80%">
    
 ---
