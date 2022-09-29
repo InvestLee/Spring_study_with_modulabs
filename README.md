@@ -377,6 +377,8 @@ public class HelloController {
 
 객체의 의존 관계를 외부에서 주입하는 방식
 
+Controller가 service와 repository를 통해서만 데이터를 조회하고 수정할 수 있는 것을 의존 관계가 있다고 
+
 Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙여 주입
 
 주입할 객체가 하나인 경우 @Autowired 어노테이션 생략이 가능 
