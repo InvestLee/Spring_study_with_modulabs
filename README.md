@@ -385,6 +385,9 @@ public class MemberController {
 }
 ```
 
+1. 생성자 or Setter가 없으므로 수동 의존성 주입이 필요한 테스트 불가능
+2. 의존성이 프레임워크에 강하게 종속되는 문제점 발생
+
 - Setter Injection(수정자 주입)
 ```
 @Controller
@@ -423,6 +426,8 @@ public class MemberController {
 
 ---
 ### 8. Spring Bean(component Scan VS 코드로 직접 등록)
+
+Spring Bean은 Spring 컨테이너가 관리하는 객체
 
 #### <component Scan 방식으로 Spring Bean 등록>
 ```
