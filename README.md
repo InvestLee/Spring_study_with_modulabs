@@ -389,6 +389,8 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 
 기본적으로 설정을 바꾸지 않는 이상 Spring Container에 명칭이 동일한 객체 등록 불가능(싱글톤 패턴)
 
+<br/><br/>
+
 - DI를 사용해야 하는 이유
 
 	- 역활을 분리하여 응집도를 높이고 결합도를 낮춰 유지보수에 유연한 구조로 만들기 위해
@@ -399,7 +401,7 @@ public class A{
 	private B b;
 	// 강한 결합 : 직접 생성
 	public MemberController(){
-		b = new B();
+		this.b = new B();
 	}
 }
 
@@ -408,14 +410,14 @@ public class B{
 	private C c;
 	// 강한 결합 : 직접 생성
 	public MemberController(){
-		c = new C();
+		this.c = new C();
 	}
 }
 ```
 
-[제어 순서]
-A생성 -> B생성 -> C생성 -> .....
+제어 순서 : A생성 -> B생성 -> C생성 -> .....
 
+<br/>
 
 [객체를 외부에서 주입하는 경우]
 ```
@@ -437,10 +439,9 @@ public class B{
 }
 ```
 
-[제어 순서]
-....C생성 -> B생성 -> A생성
+제어 순서 : ....C생성 -> B생성 -> A생성
 
-	
+ <br/><br/>
 
 - Field Injection(필드 주입)
 ```
