@@ -160,7 +160,8 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 2. src/main/resources
 
-- java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 static, templates 그리고 application.properties 파일이 기본적으로 생성
+- java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 static, templates 그리고 application.properties 파일이   
+  기본적으로 생성
 
 3. static
 
