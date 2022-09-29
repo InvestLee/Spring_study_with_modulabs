@@ -345,6 +345,10 @@ public class HelloController {
 
    - 비즈니스 도메인 객체 (ex. 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리)
 
+4. Entity
+
+   - 실제 DB 테이블과 Mapping되는 클래스로 DB 테이블 내 존재하는 컬럼만을 속
+
 4. Controller
 
    - 사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현 (웹 MVC의 Controller 역할과 동일)
