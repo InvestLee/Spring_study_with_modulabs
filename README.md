@@ -395,9 +395,9 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 
 	- 역활을 분리하여 응집도를 높이고 결합도를 낮춰 유지보수에 유연한 구조로 만들기 위해
 
-	- 객체를 직접 주입하는 경우 특정 객체의 변경이 필요하면 특정 객체에 있는 다른 객체 수정 필요(강한 결합)
+	- 객체를 직접 주입하는 경우 특정 객체의 변경이 필요하면 특정 객체를 사용한 모든 클래스 변경 필요(강한 결합)
 
-	- 객체를 외부에서 주입하는 경우 객체를 한 번만 생성하여 재사용 가능하므로 유지보수 용이(약한 )
+	- 객체를 외부에서 주입하는 경우 객체를 한 번만 생성하여 재사용 가능하므로 유지보수 용이(약한 결합)
 
 
 [객체를 직접 주입하는 경우]
@@ -410,11 +410,19 @@ public class Suit{
     }
 }
 
-//2. 사람 클래스에서 양복 객체 생성
-public class Human{
+//2. 사람A, 사람B 클래스에서 양복 객체 생성
+public class HumanA{
     public Suit suit;
     
-    public Human() {
+    public HumanA() {
+        this.suit = new Suit();
+    }
+}
+
+public class HumanB{
+    public Suit suit;
+    
+    public HumanB() {
         this.suit = new Suit();
     }
 }
@@ -430,11 +438,19 @@ public class Suit{
     }
 }
 
-//4. 사람 클래스에 있는 양복 객체에도 해당 변경사항을 적용해야함
-public class Human{
+//4. 사람A, 사람B 클래스에 있는 양복 객체에도 해당 변경사항을 적용해야함
+public class HumanA{
     public Suit suit;
     
-    public Human() {
+    public HumanA() {
+        this.suit = new Suit(String name);
+    }
+}
+
+public class HumanB{
+    public Suit suit;
+    
+    public HumanB() {
         this.suit = new Suit(String name);
     }
 }
@@ -456,11 +472,19 @@ public class Suit{
 }
 Suit suit = new Suit();
 
-//2. 사람 클래스에서 양복 객체 생성(양복 객체 사용/재사용)
-public class Human{
+//2. 사람A, 사람B 클래스에서 양복 객체 생성(양복 객체 사용/재사용)
+public class HumanA{
     public Suit suit;
     
-    public Human(Suit suit) {
+    public HumanA(Suit suit) {
+        this.suit = Suit;
+    }
+}
+
+public class HumanB{
+    public Suit suit;
+    
+    public HumanB(Suit suit) {
         this.suit = Suit;
     }
 }
@@ -477,11 +501,19 @@ public class Suit{
 }
 Suit suit = new Suit(String name);
 
-//4. 사람클래스는 변경이 필요하지 않음
-public class Human{
+//4. 사람A, 사람B 클래스는 변경이 필요하지 않음
+public class HumanA{
     public Suit suit;
     
-    public Human(Suit suit) {
+    public HumanA(Suit suit) {
+        this.suit = Suit;
+    }
+}
+
+public class HumanB{
+    public Suit suit;
+    
+    public HumanB(Suit suit) {
         this.suit = Suit;
     }
 }
