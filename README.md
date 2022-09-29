@@ -404,6 +404,10 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 ```
 //1. 양복 클래스
 public class Suit{
+    private name;
+
+    public Suit(){
+    }
 }
 
 //2. 사람 클래스에서 양복 객체 생성
@@ -418,8 +422,11 @@ public class Human{
 
 ```
 //3. 양복 클래스에서 양복 객체에 메이커 명을 지어준다면,
-public class Suit {
-    public Suit(String name) {
+public class Suit{
+    private name;
+
+    public Suit(String name){
+        this.name = name;
     }
 }
 
@@ -446,10 +453,6 @@ public class Suit{
 
     public Suit(){
     }
-
-    public Suit(String name){
-        this.name = name;
-    }
 }
 Suit suit = new Suit();
 
@@ -467,9 +470,6 @@ public class Human{
 //3. 양복 클래스에서 양복 객체에 메이커 명을 지어줘도
 public class Suit{
     private name;
-
-    public Suit(){
-    }
 
     public Suit(String name){
         this.name = name;
