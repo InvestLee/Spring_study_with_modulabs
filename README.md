@@ -412,10 +412,10 @@ public class MemberController {
 ### 8. Spring Bean(component Scan VS 코드로 직접 등록)
 
 #### <component Scan 방식으로 Spring Bean 등록>
-'''
+```
 @Repository
 public class MemoryMemberRepository implements MemberRepository {}
-'''
+```
 
 - 정형화된 Controller, Service, Repository 코드일 경우에 사용
 
