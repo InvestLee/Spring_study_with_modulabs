@@ -605,6 +605,17 @@ public class MemberController {
 	- ex) 스마트폰에서 다크모드 설정 시 다른 페이지로 이동하더라도 다크모드가 유지되어야 함
 
 ---
+
+#### <제어의 역전(IoC : Inversion of Control)>
+
+개발자가 작성한 객체의 제어 권한이 프레임워크로 넘어가서 스프링 컨테이너에서 객체를 호출하는 것
+
+위 DI 파트의 사람과 양복의 예시처럼 작은 부품부터 거꾸로 조립되는 것이 특징(제어흐름이 바뀜)
+
+component Scan 방식이나 코드로 직접 등록하는 방식에 의해 스프링 컨테이너에 Spring Bean 형태로 등록(8장에서 설명)
+
+※ Sprint Bean : 스프링 컨테이너가 관리하는 객체
+
 ### 7. Test
 
 테스트 코드의 의미는 작성된 코드를 자동으로 테스트해주는 코드를 추가로 작성한 것
@@ -617,6 +628,9 @@ public class MemberController {
 Spring Bean은 Spring 컨테이너가 관리하는 객체
 
 #### <component Scan 방식으로 Spring Bean 등록>
+
+
+
 ```
 @Repository
 public class MemoryMemberRepository implements MemberRepository {}
