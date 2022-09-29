@@ -173,7 +173,7 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 5. application.properties
 
-   - 프로젝트의 환경 설정, 데이터베이스 등의 설정을 저장하는 파일
+   - 프로젝트의 환경 설정, 데이터베이스 등의 설정을 저장하는 파일   
      (Tomcat(WAS) 설정, 데이터베이스 관련 정보를 key-value 형식으로 지정 등)
 
    - 웹 애플리케이션을 실행하면 자동으로 로딩
