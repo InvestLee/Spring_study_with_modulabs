@@ -327,7 +327,33 @@ public class HelloController {
 ---
 ### 5. Controller, Service , Repository
 
+역할 별로 분할하여 가독성 및 유지보수 편의성 증진
+
 ![image](https://user-images.githubusercontent.com/101415950/192966018-e6c0cb87-aa3b-4277-9868-7c0ca0f03f38.png)
+
+1. DTO  
+
+   - 데이터 교환을 위해 사용할 객체를 만드는 과정으로, 변수 및 객체를 송수신할 데이터의 자료형에 알맞게 생성 
+
+2. DAO
+
+   - 데이터베이스에 접근하고, SQL을 활용하여 데이터를 실제로 조작하는 코드를 구현하는 과정 (JPA가 대신 그 역할을 수행)
+
+3. Domain
+
+   - css
+
+4. Controller
+
+   - 사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현
+
+5. Service
+
+   - 사용자의 요청에 응답하기 위한 비즈니스 로직을 
+
+6. Repository
+
+   - 테스
 
 ---
 ### 6. DI, IoC
