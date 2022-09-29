@@ -363,11 +363,41 @@ public class HelloController {
 #### <의존성 주입(DI : Dependency Injection)>
 
 - Field Injection(필드 주입)
+```
+@Controller
+public class MemberController {
+	
+	@Autowired
+	private MemberService memberService;
+}
+```
 
 - Setter Injection(수정자 주입)
+```
+@Controller
+public class MemberController {
+	private  MemberService memberService;
+	
+	@Autowired
+	public void setMemberController(MemberService memberService) {
+		this.memberService = memberService;
+	}
+}
+```
+
 
 - Construction Injection(생성자 주입)
-
+```
+@Controller
+public class MemberController {
+	private final MemberService memberService;
+	
+	@Autowired
+	public MemberController(MemberService memberService) {
+		this.memberService = memberService;
+	}
+}
+```
 
 싱글톤 패턴
 
