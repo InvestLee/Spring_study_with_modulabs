@@ -395,25 +395,44 @@ Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙�
 
 	- 역활을 분리하여 응집도를 높이고 결합도를 낮춰 유지보수에 유연한 구조로 만들기 위해
 
+	- 객체를 직접 주입하는 경우 특정 객체의 변경이 필요하면 특정 객체에 있는 다른 객체 수정 필요(강한 결합)
+
+	- 객체를 외부에서 주입하는 경우 객체를 한 번만 생성하여 재사용 가능하므로 유지보수 용이(약한 )
+
+
 [객체를 직접 주입하는 경우]
 ```
-public class A{
-	private B b;
-	// 강한 결합 : 직접 생성
-	public MemberController(){
-		this.b = new B();
-	}
+//1. 양복 클래스
+public class Suit{
 }
 
-
-public class B{
-	private C c;
-	// 강한 결합 : 직접 생성
-	public MemberController(){
-		this.c = new C();
-	}
+//2. 사람 클래스에서 양복 객체 생성
+public class Human{
+    public Suit suit;
+    
+    public Human() {
+        this.suit = new Suit();
+    }
 }
 ```
+
+```
+//3. 양복 클래스에서 양복 객체에 메이커 명을 지어준다면,
+public class Suit {
+    public Suit(String name) {
+    }
+}
+
+//4. 사람 클래스에 있는 양복 객체에도 해당 변경사항을 적용해야함
+public class Human{
+    public Suit suit;
+    
+    public Human() {
+        this.suit = new Suit(String name);
+    }
+}
+```
+
 
 제어 순서 : A생성 -> B생성 -> C생성 -> .....
 
@@ -421,21 +440,50 @@ public class B{
 
 [객체를 외부에서 주입하는 경우]
 ```
-public class A{
-	private B b;
-	// 약한 결합 : 생성된 것을 주입 받음 - 의존성 주입
-	public MemberController(B b){
-		this.b = b;
-	}
+//1. 양복 클래스(양복 객체 한 번만 생성)
+public class Suit{
+    private name;
+
+    public Suit(){
+    }
+
+    public Suit(String name){
+        this.name = name;
+    }
 }
+Suit suit = new Suit();
 
+//2. 사람 클래스에서 양복 객체 생성(양복 객체 사용/재사용)
+public class Human{
+    public Suit suit;
+    
+    public Human(Suit suit) {
+        this.suit = Suit;
+    }
+}
+```
 
-public class B{
-	private C c;
-	// 약한 결합 : 생성된 것을 주입 받음 - 의존성 주입
-	public MemberController(D d){
-		this.c = c;
-	}
+```
+//3. 양복 클래스에서 양복 객체에 메이커 명을 지어줘도
+public class Suit{
+    private name;
+
+    public Suit(){
+    }
+
+    public Suit(String name){
+        this.name = name;
+    }
+}
+Suit suit = new Suit(String name);
+
+//4. 사람클래스는 변경이 필요하지 않음
+public class Human{
+    public Suit suit;
+    
+    public Human(Suit suit) {
+        this.suit = Suit;
+    }
 }
 ```
 
