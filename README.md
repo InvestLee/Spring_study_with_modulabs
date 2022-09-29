@@ -329,6 +329,8 @@ public class HelloController {
 
 역할 별로 분할하여 가독성 및 유지보수 편의성 증진
 
+마치 조립 기계처럼 원하는 데이터 저장소 및 객체 등을 조립하고 분해하기 위함
+
 ![image](https://user-images.githubusercontent.com/101415950/192966018-e6c0cb87-aa3b-4277-9868-7c0ca0f03f38.png)
 
 1. DTO(Data Transfer Object)
@@ -341,19 +343,19 @@ public class HelloController {
 
 3. Domain
 
-   - css
+   - 비즈니스 도메인 객체 (ex. 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리)
 
 4. Controller
 
-   - 사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현
+   - 사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현 (웹 MVC의 Controller 역할과 동일)
 
 5. Service
 
-   - 사용자의 요청에 응답하기 위한 비즈니스 로직을 
+   - 사용자의 요청에 응답하기 위한 비즈니스 로직을 구현
 
 6. Repository
 
-   - 테스
+   - 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리
 
 ---
 ### 6. DI, IoC
