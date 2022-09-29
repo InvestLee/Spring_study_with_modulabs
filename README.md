@@ -154,39 +154,37 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 
 1. src/main/java   
 
-java 파일을 작성하기 위한 공간으로 Controller, Service, Repository, Entity 파일 등이 속한 디렉토리   
+- java 파일을 작성하기 위한 공간으로 Controller, Service, Repository, Entity 파일 등이 속한 디렉토리   
 
-이 디렉토리에 속한 <프로젝트명> + Application.java 파일은 프로그램 시작을 담당하는 파일
+- 이 디렉토리에 속한 <프로젝트명> + Application.java 파일은 프로그램 시작을 담당하는 파일
 
 2. src/main/resources
 
-java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 
-
-static, templates 그리고 application.properties 파일이 기본적으로 생성
+- java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 static, templates 그리고 application.properties 파일이 기본적으로 생성
 
 3. static
 
-css, fonts, images, plugin, scripts 등의 정적 리소스 파일이 속한 디렉토리
+- css, fonts, images, plugin, scripts 등의 정적 리소스 파일이 속한 디렉토리
 
 4. templates
 
-사용자에게 화면을 출력하기 위한 HTML, JSP, Thymeleaf 등 자바 객체와 연동되는 templates 파일이 저장되는 디렉토리
+- 사용자에게 화면을 출력하기 위한 HTML, JSP, Thymeleaf 등 자바 객체와 연동되는 templates 파일이 저장되는 디렉토리
 
 5. application.properties
 
-프로젝트의 환경 설정, 데이터베이스 등의 설정을 저장하는 파일(Tomcat(WAS) 설정, 데이터베이스 관련 정보를 key-value 형식으로 지정 등)
+- 프로젝트의 환경 설정, 데이터베이스 등의 설정을 저장하는 파일(Tomcat(WAS) 설정, 데이터베이스 관련 정보를 key-value 형식으로 지정 등)
 
-웹 애플리케이션을 실행하면 자동으로 로딩
+- 웹 애플리케이션을 실행하면 자동으로 로딩
 
 6. src/test/java
 
-테스트 코드를 작성하는 공간으로 JUnit과 스프링부트의 테스팅 도구를 사용하여 서버를 실행하지 않고 테스트가 가능
+- 테스트 코드를 작성하는 공간으로 JUnit과 스프링부트의 테스팅 도구를 사용하여 서버를 실행하지 않고 테스트가 가능
 
-각각의 개발 단계에 알맞는 단위 테스트 및 통합 테스트를 진행하는 용도로 사용
+- 각각의 개발 단계에 알맞는 단위 테스트 및 통합 테스트를 진행하는 용도로 사용
 
 7. build.gradle
 
-환경설정 및 프로젝트를 위해 필요한 플러그인과 라이브러리를 기술하는 파일 (해당 글 2장 참고)
+- 환경설정 및 프로젝트를 위해 필요한 플러그인과 라이브러리를 기술하는 파일 (해당 글 2장 참고)
 
 ---
 ### 4. 정적 콘텐츠 vs MVC vs API
