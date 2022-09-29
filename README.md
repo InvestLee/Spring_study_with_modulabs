@@ -388,7 +388,9 @@ public class MemberController {
   1. 생성자 or Setter가 없으므로 수동 의존성 주입이 필요한 테스트 불가능
 	
   2. 의존성이 프레임워크에 강하게 종속되는 문제점 발생
-
+   
+ <br/><br/>
+   
 - Setter Injection(수정자 주입)
 ```
 @Controller
@@ -406,9 +408,10 @@ public class MemberController {
 
   2. 런타임 중 setter를 다시 호출하여 이미 주입된 의존성 변경이 가능
 
-  3. 주로 런타임 중 의존성 수정하거나 선택적 의존성(의존성 주입이 반드시 필수가 아닌 것을 의미)에 사용
-
-
+  3. 주로 런타임 중 의존성 수정하거나 선택적 의존성(의존성 주입이 반드시 필수가 아닌 것을 의미)에 사용   
+  
+<br/><br/> 
+  
 - Construction Injection(생성자 주입)
 ```
 @Controller
