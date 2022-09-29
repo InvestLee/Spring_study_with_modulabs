@@ -379,6 +379,8 @@ public class HelloController {
 
 객체의 의존 관계를 외부에서 주입하는 방식
 
+스프링에서는 의존 설정에 의해 Spring Container 의존성 자동 주입이 발생
+
 Controller가 service와 repository를 통해서만 데이터를 조회하고 수정할 수 있는 것을 의존 관계가 있다고 표현 가능 
 
 Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙여 주입
@@ -602,7 +604,7 @@ public class MemberController {
 
 	- 스프링에서는 싱글톤 패턴을 적용하지 않아도 기본적으로 객체를 싱글톤으로 관리하여 싱글톤 단점 해결
 
-	- 명령 수행 후 Spring Bean 전부 삭제하므로 단위테스트가 가능
+	- 스프링 컨테이너 종료 시 Spring Bean 전부 삭제하므로 단위테스트가 가능
 
 	- 스프링에서 싱글톤으로 관리하는 이유는 대규모 트래픽을 처리하기 위함(새로 생성하지 않고 동일한 객체를 반환하므로)
 
@@ -617,6 +619,8 @@ public class MemberController {
 위 DI 파트의 사람과 양복의 예시처럼 작은 부품부터 거꾸로 조립되는 것이 특징(제어흐름이 바뀜)
 
 component Scan 방식이나 코드로 직접 등록하는 방식에 의해 스프링 컨테이너에 Spring Bean 형태로 등록(8장에서 설명)
+
+자주 사용하는 객체를 미리 메모리에 올려 두고 사용자가 객체에 대한 사용 요청했을 때, 올려둔 객체를 재활용하는 것이 IoC의 개념
 
 ※ Sprint Bean : 스프링 컨테이너가 관리하는 객체
 
