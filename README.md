@@ -375,11 +375,17 @@ public class HelloController {
 
 #### <의존성 주입(DI : Dependency Injection)>
 
+객체의 의존 관계를 외부에서 주입하는 방식
+
 Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙여 주입
 
-주입할 객체가 하나인 경우 생략이 가능 
+주입할 객체가 하나인 경우 @Autowired 어노테이션 생략이 가능 
 
 @Autowired가 여러 개 있을 경우 가장 많은 의존성을 주입할 수 있는 생성자를 사용하여 의존성 주입
+
+- DI를 사용해야 하는 이유
+```
+```
 
 - Field Injection(필드 주입)
 ```
