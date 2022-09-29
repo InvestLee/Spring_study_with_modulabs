@@ -327,6 +327,9 @@ public class HelloController {
 ---
 ### 5. Controller, Service , Repository
 
+![image](https://user-images.githubusercontent.com/101415950/192965430-79396ad1-771c-40af-9e40-582f823df09b.png)
+
+
 ---
 ### 6. DI, IoC
 
