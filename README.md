@@ -257,6 +257,8 @@ public class HelloController {
 </html>
 ```
 
+※ @RequestParam("name")은 url이 전달될 때 value가 담긴 name 파라미터를 받아올 때 사용, 즉 HTTP 요청 파라미터를 받기 위해 사용
+
 - 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
 
@@ -377,7 +379,7 @@ public class HelloController {
 
 객체의 의존 관계를 외부에서 주입하는 방식
 
-Controller가 service와 repository를 통해서만 데이터를 조회하고 수정할 수 있는 것을 의존 관계가 있다고 
+Controller가 service와 repository를 통해서만 데이터를 조회하고 수정할 수 있는 것을 의존 관계가 있다고 표현 가능 
 
 Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙여 주입
 
