@@ -409,7 +409,36 @@ public class MemberController {
 테스트 코드를 이용하여 작성한 모든 코드를 한번에 테스트할 수 있으므로 직접 프로그램을 실행하여 테스트하는 것보다 효율적임
 
 ---
-### 8. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
+### 8. Spring Bean(component Scan VS 코드로 직접 등록)
+
+#### <component Scan 방식으로 Spring Bean 등록>
+'''
+@Repository
+public class MemoryMemberRepository implements MemberRepository {}
+'''
+
+- 정형화된 Controller, Service, Repository 코드일 경우에 사용
+
+- 클래스 앞에 @Component 애노테이션(@Controller, @Service, @Repository 포함)이 있으면 Spring Bean으로 자동 등록 
+
+#### <코드로 직접 Spring Bean 등록>
+```
+@Configuration
+public class SpringConfig {
+	
+	@Bean
+	public MemberService memberService() {
+		return new MemberService(memberRepository());
+	}
+
+	@Bean
+	public MemberRepository memberRepository() {
+		return new MemoryMemberRepository();
+	}
+}
+```
+
+- 정형화 되지 않거나, 상황에 따라 구현 클래스를 변경해야 하는 경우에 사용(ex. 데이터 베이스 변경 : 순수 JDBC -> JPA)
 
 ---
 ### 9. DB 접근 기술(JDBC, JPA)
