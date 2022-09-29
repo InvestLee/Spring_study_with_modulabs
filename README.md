@@ -315,10 +315,10 @@ public class HelloController {
 1. 웹브라우저에서 http://localhost:8080/hello-api?name=spring 주소를 Tomcat(WAS)으로 전송 
 2. Tomcat(WAS)에서 스프링 컨테이너로 해당 요청을 전송하여 hello-mvc 관련 Controller를 찾는 과정을 수행(@GetMapping("hello-api"))   
 3. Controller에서 @ResponseBody 어노테이션에 의해 HTTP의 Body에 문자 or 객체를 직접 반환(객체는 JSon으로 변환되어 반환)   
-	
-	3-1. 이 과정에서 viewResolver 대신 클라이언트의 HTTP Accept 해더와 서버의 컨트롤러 반환 타입 정보 둘을 조합하여
-		
-		HttpMessageConverter가 동작하여 문자 or 객체를 직접 처리
+
+   (이 과정에서 viewResolver 대신 클라이언트의 HTTP Accept 해더와 서버의 컨트롤러 반환 타입 정보 둘을 조합하여   
+   
+   HttpMessageConverter가 동작하여 문자 or 객체를 직접 처리)
 	
 	- 기본 문자 처리 : StringHttpMessageConverter
 	- 기본 객체 처리 : MappingJackson2HttpMessageConverter
