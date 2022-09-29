@@ -335,19 +335,22 @@ public class HelloController {
 
 1. DTO(Data Transfer Object)
 
-   - 데이터 교환을 위해 사용할 객체를 만드는 과정으로, 변수 및 객체를 송수신할 데이터의 자료형에 알맞게 생성 
+   - 변수 및 객체를 송수신할 데이터의 자료형에 알맞게 생성
+
+   - 데이터를 담아서 전달하는 바구니 역할을 하는 데이터 전송 객체
+
+   - Domain(Entity Class)와 DTO를 분리하는 이유는 DB와 View 사이의 역할을 분리하기 위함   
+     (Controller에서 Domain(Entity Class)에 직접 사용하지 못하게 하여 의도하지 않은 DB 컬럼 변경 방지)
 
 2. DAO(Data Access Object)
 
    - 데이터베이스에 접근하고, SQL을 활용하여 데이터를 실제로 조작하는 코드를 구현하는 과정 (JPA가 대신 그 역할을 수행)
 
-3. Domain
+3. Domain(Entity Class)
 
    - 비즈니스 도메인 객체 (ex. 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리)
 
-4. Entity
-
-   - 실제 DB 테이블과 Mapping되는 클래스로 DB 테이블 내 존재하는 컬럼만을 속
+   - 실제 DB 테이블과 Mapping되는 클래스로 DB 테이블 내 존재하는 컬럼만을 속성으로 가져야 함
 
 4. Controller
 
@@ -357,9 +360,15 @@ public class HelloController {
 
    - 사용자의 요청에 응답하기 위한 비즈니스 로직을 구현
 
+   - DB의 데이터가 필요할 때는 리포지토리에게 요청
+
+   - 엔티티 객체와 DTO 객체를 서로 변환하여 양방향으로 전달
+
 6. Repository
 
-   - 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리
+   - Domain(Entity Class)에 의해 생성된 DB에 접근하는 메서드들을 사용하기 위한 인터페이스
+
+   - DB 연결, 해제, 자원 관리 및 CRUD 작업 처리(ex. 도메인 객체를 DB에 저장하고 관리)
 
 ---
 ### 6. DI, IoC
