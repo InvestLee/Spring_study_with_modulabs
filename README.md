@@ -331,11 +331,11 @@ public class HelloController {
 
 ![image](https://user-images.githubusercontent.com/101415950/192966018-e6c0cb87-aa3b-4277-9868-7c0ca0f03f38.png)
 
-1. DTO  
+1. DTO(Data Transfer Object)
 
    - 데이터 교환을 위해 사용할 객체를 만드는 과정으로, 변수 및 객체를 송수신할 데이터의 자료형에 알맞게 생성 
 
-2. DAO
+2. DAO(Data Access Object)
 
    - 데이터베이스에 접근하고, SQL을 활용하여 데이터를 실제로 조작하는 코드를 구현하는 과정 (JPA가 대신 그 역할을 수행)
 
@@ -357,6 +357,8 @@ public class HelloController {
 
 ---
 ### 6. DI, IoC
+
+싱글톤 패턴
 
 ---
 ### 7. Test
