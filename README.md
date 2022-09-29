@@ -375,6 +375,12 @@ public class HelloController {
 
 #### <의존성 주입(DI : Dependency Injection)>
 
+Spring에서는 주입이 필요한 객체에 @Autowired 어노테이션을 붙여 주입
+
+주입할 객체가 하나인 경우 생략이 가능 
+
+@Autowired가 여러 개 있을 경우 가장 많은 의존성을 주입할 수 있는 생성자를 사용하여 의존성 주입
+
 - Field Injection(필드 주입)
 ```
 @Controller
@@ -425,7 +431,28 @@ public class MemberController {
 }
 ```
 
-싱글톤 패턴
+  1. 객체의 최초 생성 시점에 스프링이 모든 의존성을 주입
+
+  2. 생성자 호출 시 final에 의해서 의존성 주입이 최초 1회만 이루어짐
+
+  3. 생성자 주입은 의존관계 불변이므로 NullPointerException 방지(다른 방식은 직접 객체를 생성하여 방지)
+  
+<br/><br/> 
+
+- 주입 대상이 여러 개인경우
+
+  1. 의존성 주입 우선 순위는 생성자 -> 필드 -> 수정자 순
+
+  2. 스프링은 의존성 주입 대상을 찾을 때 자료형 -> @Qualifier -> @Primary -> Bean name 순으로 탐색
+     (매개변수명과 등록된 Bean의 이름이 일치하는지 체크)
+
+  3. @Primary 어노테이션은 해당 타입의 의존성을 주입할 때 우선적으로 주입
+
+  4. @Qualifier(value = "bean 객체 이름") 의존성 주입 객체를 선택가능
+
+<br/><br/> 
+
+- 싱글톤 패턴
 
 ---
 ### 7. Test
