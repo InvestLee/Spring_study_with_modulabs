@@ -687,6 +687,8 @@ AOP는 공통 관심 사항과 핵심 관심 사항을 분리하여 모듈화하
 
 <img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="80%" height="80%">
 
+<br/><br/>
+
 - 시간 측정 로직을 별도로 작성
 ```
 @Component
@@ -713,6 +715,8 @@ public class TimeTraceAop {
 2. 가독성 및 유지보수 측면에서 유리
 
 3. 원하는 대상에 적용할 수 있음
+
+<br/><br/>
 
 - AOP가 실행되는 과정
 <img src="https://user-images.githubusercontent.com/101415950/193166540-b8e2efad-84b5-49d8-b6a5-95d5fffca486.png" width="80%" height="80%">
