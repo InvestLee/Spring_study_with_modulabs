@@ -731,11 +731,11 @@ public class TimeTraceAop {
 
 <br/>
 
-- 프록시 패턴
+- 프록시 패턴(대리인 패턴, 유튜브 얄팍한 코딩 사전 참고)
 
-	- 어
+	- 클래스 중에서 시간이 많이 걸리거나 메모리를 많이 차지하여 객체로 여럿 생성하기 부담스러운 경우가 있음
 
-	- 즉 
+	- 그 해당 클래스의 프록시(대리자) 클래스를 따로 만들어 가벼운 작업은 프록시가 처리하고 무거운 작업은 실제 클래스가 처리
 	
 	- 스
 
@@ -743,7 +743,11 @@ public class TimeTraceAop {
 
 	- 스프링
 
-	- ex) 
+	- ex) 유튜브에서 무거운 작업 : 프리뷰 실행, 가벼운 작업 : 제목 표시
+	
+<img src="https://user-images.githubusercontent.com/101415950/193172080-10cbf292-1249-4395-8afa-2a87f6518c07.png" width="80%" height="80%">
+
+
 
 ## 마크다운 언어 참조
 https://gist.github.com/ihoneymon/652be052a0727ad59601
