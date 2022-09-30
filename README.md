@@ -742,8 +742,16 @@ public class SpringConfig {
 ### 9. DB 접근 기술(JDBC, JPA)
 
 #### <JDBC(Java Database Connectivity)>
-	
+
+- 순수 JDBC(김영한 강사님이 노가다라고 말씀하심)
+
+- 스프링 JDBC Template
+
 #### <JPA(Java Persistence API)>
+
+- JPA
+
+- 스프링 데이터 JPA
 
 ---
 ### 10. AOP(관점 지향 프로그래밍, Aspect Oriented Programming)
