@@ -685,7 +685,38 @@ AOP는 공통 관심 사항과 핵심 관심 사항을 분리하여 모듈화하
 각 메서드에 공통적으로 실행할 기능을 모듈화하여 원하는 곳에 적용할 때 사용   
 (ex. 기능 실행 시 소요되는 시간을 측정하는 기능을 몇 천개의 메서드에 적용할 때)
 
-<img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="80%" height="80%">
+
+- 시간 측정 로직을 별도로 작성
+```
+@Component
+@Aspect
+public class TimeTraceAop {
+
+	@Around("execution(* hello.hellospring..*(..))") //hello.hellospring 디렉터리 내 있는 모든 메서드에 적용
+	public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+		long start = System.currentTimeMillis();
+		System.out.println("START: " + joinPoint.toString()); //현재 실행 있는 메서드 출력
+		try {
+			return joinPoint.proceed(); //메서드 실행
+		} finally {
+			long finish = System.currentTimeMillis();
+			long timeMs = finish - start;
+			System.out.println("END: " + joinPoint.toString()+ " " + timeMs + "ms"); //현재 종료되고 있는 메서드 출력
+		}
+	}
+}
+```
+
+1. 핵심 관심 사항(비즈니스 로직)을 깔끔하게 유지
+
+2. 가독성 및 유지보수 측면에서 유리
+
+3. 원하는 대상에 적용할 수 있음
+
+- AOP가 실행되는 과정
+<img src="https://user-images.githubusercontent.com/101415950/193166540-b8e2efad-84b5-49d8-b6a5-95d5fffca486.png" width="80%" height="80%">
+
 
 
 ## 마크다운 언어 참조
