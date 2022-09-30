@@ -1074,8 +1074,14 @@ public class MemberService {}
 	
 	- 대단히 어려운 쿼리는 JPA가 제공하는 네이티브 쿼리나 스프링 JdbcTemplate를 사용
 
-
 <img src="https://user-images.githubusercontent.com/101415950/193208346-7d58b3ed-b5aa-4e41-a746-bdb442cf8d93.png" width="50%" height="50%">
+
+- 스프링 데이터 JPA를 JPA 대신 적용한 예시
+```
+public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
+	Optional<Member> findByName(String name);
+}
+```
 
 ---
 ### 10. AOP(관점 지향 프로그래밍, Aspect Oriented Programming)
