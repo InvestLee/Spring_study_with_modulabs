@@ -262,7 +262,7 @@ public class HelloController {
 <img src="https://user-images.githubusercontent.com/101415950/193283995-c3171ca7-9cbb-445d-bde2-e337eb9e0b19.png" width="80%" height="80%">
 
 - 동작 순서
-<img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/101415950/193284509-dcf94e77-8f6c-4057-bdfc-876eabfa4a1f.png" width="80%" height="80%">
 
 1. 웹브라우저에서 http://localhost:8080/hello-mvc?name=spring 주소를 Tomcat(WAS)으로 전송 
 2. Tomcat(WAS)에서 스프링 컨테이너로 해당 요청을 전송하여 hello-mvc 관련 Controller를 찾는 과정을 수행(@GetMapping("hello-mvc"))
