@@ -795,9 +795,9 @@ public class SpringConfig {
 ---
 ### 9. DB 접근 기술(JDBC, JPA)
 
-#### <JDBC(Java Database Connectivity)>
+#### 순수 JDBC(Java Database Connectivity)
 
-- 순수 JDBC(김영한 강사님이 노가다라고 말씀하심)
+- 순수 JDBC 개념 
 
 	- JDBC는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바 API로 데이터 조회 및 수정 기능 등 제공
 
@@ -908,23 +908,171 @@ public class JdbcMemberRepository implements MemberRepository {
 }
 ```
 
-- 스프링 JDBC Template
+#### 스프링 JDBC Template
 
+- 스프링 JDBC Template 개념 
+ 
 	- 순수 JDBC와 동일한 환경설정
 
 	- 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 반복 코드를 대부분 제거해주지만,
 	  하지만 SQL은 직접 작성 필요
 
+```
+public class JdbcTemplateMemberRepository implements MemberRepository {
+
+	private final JdbcTemplate jdbcTemplate;
+	
+	public JdbcTemplateMemberRepository(DataSource dataSource) {
+		jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+
+	@Override
+	public Member save(Member member) {
+		SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
+		jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("name", member.getName());
+
+		Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
+		member.setId(key.longValue());
+		return member;
+	}
+
+	@Override
+	public Optional<Member> findById(Long id) {
+		List<Member> result = jdbcTemplate.query("select * from member where id = ?", memberRowMapper(), id);
+		return result.stream().findAny();
+	}
+
+	private RowMapper<Member> memberRowMapper() {
+		return (rs, rowNum) -> {
+			Member member = new Member();
+			member.setId(rs.getLong("id"));
+			member.setName(rs.getString("name"));
+			return member;
+		};
+	}
+}
+```
+
 #### <JPA(Java Persistence API)>
 
-- JPA
-	- JPA는
+- JPA 개념 
 
-	- SQL문을 직접 java application 내에서 적을 경우가 적어짐
+	- JPA는 java 생태계에서 ORM(Object-Relational Mapping)의 기술 표준을 사용하는 인터페이스 모음
+
+	- 즉 인터페이스이므로 하이버네이트(Hibernate)와 같은 구현체가 필요
+
+	- 기존의 반복 코드를 없애고 기본적인 SQL은 JPA가 직접 만들어서 실행
+
+	- SQL과 데이터 중심 설계에서 객체 중심의 설계로 패러다임 전환 가능 -> 개발 생산성 상승
+
+<br/>
+
+- 스프링 부트에 JPA 설정 추가(resources/application.properties)
+```
+spring.datasource.url=jdbc:h2:tcp://localhost/~/test
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+
+spring.jpa.show-sql=true //JPA가 생성하는 SQL 출력
+spring.jpa.hibernate.ddl-auto=none //테이블 자동 생성 기능 Off(create 사용 시 엔티티 정보를 바탕으로 테이블 직접 생성)
+```
+<br/>
+
+-JPA 엔티티 매핑
+
+```
+@Entity
+public class Member {
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}
+```
+
+- JPA를 JDBC 대신 적용한 예시
+```
+public class JpaMemberRepository implements MemberRepository {
+	private final EntityManager em;
+
+	public JpaMemberRepository(EntityManager em) {
+		this.em = em;
+	}
+
+	public Member save(Member member) {
+		em.persist(member);
+		return member;
+	}
+
+	public Optional<Member> findById(Long id) {
+		Member member = em.find(Member.class, id);
+		return Optional.ofNullable(member);
+	}
+
+	public List<Member> findAll() {
+		return em.createQuery("select m from Member m", Member.class).getResultList();
+	}
+
+	public Optional<Member> findByName(String name) {
+		List<Member> result = em.createQuery("select m from Member m where m.name = :name", Member.class)
+			.setParameter("name", name)
+			.getResultList();
+		return result.stream().findAny();
+	}
+}
+```
+
+<br/>
+
+- 서비스 계층에 트랜잭션 추가
+	- 해당 클래스의 메서드를 실행할 때 트랜잭션을 시작
 	
-	- sql 구조를 java application 내에서 적용하지 않아도 됨
+	- 메서드가 정상 종료되면 트랜잭션을 커밋
+	
+	- 만약 런타임 예외가 발생하면 롤백
+	
+	- JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 함
 
-- 스프링 데이터 JPA
+```
+import org.springframework.transaction.annotation.Transactional
+
+@Transactional
+public class MemberService {}
+``` 
+
+#### 스프링 데이터 JPA
+
+- 스프링 데이터 JPA 개념
+
+	- Repository에 구현 클래스 없이 인터페이스 만으로 개발 가능(반복 개발해온 기본 CRID 기능은 자동으로 구현)
+	
+	- 핵심 비즈니스 로직을 개발하는 데 집중할 수 있음
+
+	- findByName(), findByEmail() 처럼 메서드 이름 만으로 조회 기능 제공(findBy이름())
+	
+	- 페이징 기능 자동 제공
+	
+	- 실무에서 복잡한 동적 쿼리는 Querydsl 라이브러리 사용
+	
+	- 대단히 어려운 쿼리는 JPA가 제공하는 네이티브 쿼리나 스프링 JdbcTemplate를 사용
 
 ---
 ### 10. AOP(관점 지향 프로그래밍, Aspect Oriented Programming)
