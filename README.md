@@ -685,7 +685,7 @@ AOP는 공통 관심 사항과 핵심 관심 사항을 분리하여 모듈화하
 각 메서드에 공통적으로 실행할 기능을 모듈화하여 원하는 곳에 적용할 때 사용   
 (ex. 기능 실행 시 소요되는 시간을 측정하는 기능을 몇 천개의 메서드에 적용할 때)
 
-<img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="70%" height="70%">
 
 
 ## 마크다운 언어 참조
