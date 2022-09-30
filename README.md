@@ -721,7 +721,13 @@ public class TimeTraceAop {
 - AOP가 실행되는 과정
 <img src="https://user-images.githubusercontent.com/101415950/193166540-b8e2efad-84b5-49d8-b6a5-95d5fffca486.png" width="80%" height="80%">
 
+1. 프록시 패턴을 사용한 프록시 AOP 방식
 
+2. AOP의 적용대상이 되는 객체에 대한 프록시 생성
+
+3. 비즈니스 로직에 접근할 때 객체에 바로 접근하지 않고 프록시를 통해 간접적으로 접근
+
+4. 프록시는 공통 기능을 실행한 뒤 대상 객체의 실제 메서드를 호출하거나 실제 메서드를 호출한 후 공통 기능 실행
 
 ## 마크다운 언어 참조
 https://gist.github.com/ihoneymon/652be052a0727ad59601
