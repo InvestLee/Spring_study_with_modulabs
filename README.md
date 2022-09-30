@@ -693,6 +693,48 @@ class MemberServiceTest {
 }
 ```
 
+
+- Spring 통합 테스트(Spring Container와 DB까지 연결한 테스트)
+
+	- @SpringBootTest : Spring Container와 테스트를 함께 실행
+	
+	- @Transactional : 테스트 시작 전 트랜잭션을 시작하고 테스트 완료 후 Rollback하여 DB에 데이터가 남지 않으므로 다음 테스트 영향 X
+ 
+```
+@SpringBootTest
+@Transactional
+class MemberServiceIntegrationTest {
+	
+	@Autowired MemberService memberService;
+	@Autowired MemberRepository memberRepository;
+
+	@Test //테스트 메소드
+	public void 회원가입() throws Exception {
+		//Given
+		Member member = new Member();
+		member.setName("hello");
+		//When
+		Long saveId = memberService.join(member);
+		//Then
+		Member findMember = memberRepository.findById(saveId).get();
+		assertEquals(member.getName(), findMember.getName()); //assertEquals(예상값,실제값) 일치하면 Pass
+	}
+
+	@Test //테스트 메소드
+	public void 중복_회원_예외() throws Exception {
+		//Given
+		Member member1 = new Member();
+		member1.setName("spring");
+		Member member2 = new Member();
+		member2.setName("spring");
+		//When
+		memberService.join(member1);
+		IllegalStateException e = assertThrows(IllegalStateException.class,() -> memberService.join(member2));//예외가 발생해야 한다.
+		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다."); //assertThat(조건Boolean) 참이면 Pass
+	}
+}
+```
+
 ---
 ### 8. Spring Bean(component Scan VS 코드로 직접 등록)
 
