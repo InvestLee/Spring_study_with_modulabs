@@ -687,7 +687,7 @@ AOP는 공통 관심 사항과 핵심 관심 사항을 분리하여 모듈화하
 
 <img src="https://user-images.githubusercontent.com/101415950/193165846-0dbd5c28-5998-4f62-b92e-7c7bb6d2476f.png" width="80%" height="80%">
 
-<br/><br/>
+<br/>
 
 - 시간 측정 로직을 별도로 작성
 ```
@@ -716,7 +716,7 @@ public class TimeTraceAop {
 
 3. 원하는 대상에 적용할 수 있음
 
-<br/><br/>
+<br/>
 
 - AOP가 실행되는 과정
 <img src="https://user-images.githubusercontent.com/101415950/193166540-b8e2efad-84b5-49d8-b6a5-95d5fffca486.png" width="80%" height="80%">
@@ -728,6 +728,22 @@ public class TimeTraceAop {
 3. 비즈니스 로직에 접근할 때 객체에 바로 접근하지 않고 프록시를 통해 간접적으로 접근
 
 4. 프록시는 공통 기능을 실행한 뒤 대상 객체의 실제 메서드를 호출하거나 실제 메서드를 호출한 후 공통 기능 실행
+
+<br/>
+
+- 프록시 패턴
+
+	- 어
+
+	- 즉 
+	
+	- 스
+
+	- 스프링 
+
+	- 스프링
+
+	- ex) 
 
 ## 마크다운 언어 참조
 https://gist.github.com/ihoneymon/652be052a0727ad59601
