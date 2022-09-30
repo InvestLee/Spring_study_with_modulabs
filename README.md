@@ -741,6 +741,10 @@ public class SpringConfig {
 ---
 ### 9. DB 접근 기술(JDBC, JPA)
 
+#### <JDBC(Java Database Connectivity)>
+	
+#### <JPA(Java Persistence API)>
+
 ---
 ### 10. AOP(관점 지향 프로그래밍, Aspect Oriented Programming)
 
