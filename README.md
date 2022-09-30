@@ -220,7 +220,7 @@ implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래�
 2. Tomcat(WAS)에서 스프링 컨테이너로 해당 요청을 전송하여 hello-static 관련 Controller를 찾는 과정을 수행
 3. Controller가 없는 경우 resources에 있는 hello-static 관련 html 파일을 찾아 웹 브라우저에 전송하여 화면에 출력
 
-
+<br/><br/>
 
 #### <MVC 방식>
 
@@ -270,7 +270,7 @@ public class HelloController {
 3. Controller에서 model에 name:spring을 담아 viewResolver(resources/static/hello-template.html)로 전송
 4. hello-template에서 Thymeleaf(html 파일에서 동적으로 요청을 처리하기 위한 기술) 템플릿 엔진으로 요청을 처리하여 웹 브라우저에 전송
 
-
+<br/><br/>
 
 #### <API 방식, Application Programming Interface>
 
