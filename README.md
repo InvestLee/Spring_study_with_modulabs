@@ -745,9 +745,7 @@ public class TimeTraceAop {
 
 	- ex) 유튜브에서 무거운 작업 : 프리뷰 실행, 가벼운 작업 : 제목 표시
 	
-<img src="https://user-images.githubusercontent.com/101415950/193172080-10cbf292-1249-4395-8afa-2a87f6518c07.png" width="80%" height="80%">
-
-
+![image](https://user-images.githubusercontent.com/101415950/193172857-8ba06812-1a8f-4509-96c1-01fbb8cc9f2a.png)
 
 ## 마크다운 언어 참조
 https://gist.github.com/ihoneymon/652be052a0727ad59601
