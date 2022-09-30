@@ -809,9 +809,14 @@ public class SpringConfig {
 	
 	- DB에서 정보를 가져올 때마다 연결 및 해제해야하는 번거로움과 서버 과부하, 속도 저하 문제 있음
 	
-	- 다른 기술에 비해 작성해야 할 사항이 많아 유지보수가 어렵다
+	- connection, prepareStatement, ResultSet 등 반복되는 코드가 많아 유지보수하기 까다로움
 
 - 스프링 JDBC Template
+
+	- 순수 JDBC와 동일한 환경설정
+
+	- 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 반복 코드를 대부분 제거해주지만,
+	  하지만 SQL은 직접 작성 필요
 
 #### <JPA(Java Persistence API)>
 
