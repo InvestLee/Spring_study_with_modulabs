@@ -259,6 +259,7 @@ public class HelloController {
 
 ※ @RequestParam("name")은 url이 전달될 때 value가 담긴 name 파라미터를 받아올 때 사용, 즉 HTTP 요청 파라미터를 받기 위해 사용
 
+- 실행 결과(http://localhost:8080/hello-mvc?name=spring!!!!!!)
 <img src="https://user-images.githubusercontent.com/101415950/193283995-c3171ca7-9cbb-445d-bde2-e337eb9e0b19.png" width="80%" height="80%">
 
 - 동작 순서
@@ -318,6 +319,8 @@ public class HelloController {
 	}
 }
 ```
+- 실행 결과(http://localhost:8080/hello-api?name=spring!!!!!!)
+<img src="https://user-images.githubusercontent.com/101415950/193285275-2ff6e6d7-dc8a-47c2-a1df-65ddef51c91b.png" width="80%" height="80%">
 
 - 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192705493-8abdce7a-558a-4b1f-9f39-82585aa7f0c5.png" width="80%" height="80%">
