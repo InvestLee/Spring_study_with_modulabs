@@ -655,18 +655,18 @@ class MemberServiceTest {
 	MemberService memberService;
 	MemoryMemberRepository memberRepository;
 
-	@BeforeEach
+	@BeforeEach //각 @Test 메소드가 실행되기 전 반드시 실행
 	public void beforeEach() {
 		memberRepository = new MemoryMemberRepository();
 		memberService = new MemberService(memberRepository);
 	}
 
-	@AfterEach
+	@AfterEach //각 @Test 메소드가 실행된 후 반드시 실행
 	public void afterEach() {
 		memberRepository.clearStore();
 	}
 
-	@Test
+	@Test //테스트 메소드
 	public void 회원가입() throws Exception {
 		//Given
 		Member member = new Member();
@@ -675,10 +675,10 @@ class MemberServiceTest {
 		Long saveId = memberService.join(member);
 		//Then
 		Member findMember = memberRepository.findById(saveId).get();
-		assertEquals(member.getName(), findMember.getName());
+		assertEquals(member.getName(), findMember.getName()); //assertEquals(예상값,실제값) 일치하면 Pass
 	}
 
-	@Test
+	@Test //테스트 메소드
 	public void 중복_회원_예외() throws Exception {
 		//Given
 		Member member1 = new Member();
@@ -688,7 +688,7 @@ class MemberServiceTest {
 		//When
 		memberService.join(member1);
 		IllegalStateException e = assertThrows(IllegalStateException.class,() -> memberService.join(member2));//예외가 발생해야 한다.
-		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다."); //assertThat(조건Boolean) 참이면 Pass
 	}
 }
 ```
