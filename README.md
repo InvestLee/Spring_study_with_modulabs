@@ -669,12 +669,12 @@ public class SpringConfig {
 }
 ```
 
-- Controller는 정형화된 모듈이므로 굳이 직접 Spring Bean에 등록하지 않고 component Scan 방식으로 진행한다.
+- Controller는 정형화된 모듈이므로 굳이 직접 Spring Bean에 등록하지 않고 component Scan 방식으로 진행한다.   
   (사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현하는 역할을 하기 때문)
 
 - 해당 예제를 진행할 때, Service 클래스와 Repository 클래스의 @Service, @Repository 제거한다.
 
-- 정형화 되지 않거나, 상황에 따라 구현 클래스를 변경해야 하는 경우에 사용(9장 DB 접근 기술 예제 )
+- 정형화 되지 않거나, 상황에 따라 구현 클래스를 변경해야 하는 경우에 사용(9장 DB 접근 기술 예제 참고)   
   (ex. 데이터 베이스 변경 : 순수 JDBC -> JPA)
 
 ---
