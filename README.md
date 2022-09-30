@@ -644,12 +644,54 @@ component Scan 방식이나 코드로 직접 등록하는 방식에 의해 스�
 
 	- @Test : 테스트를 수행하는 메소드라는 의미이며 독립적인 테스트를 위해 @Test 메소드마다 객체 별도 생성
 
-	- @Before : 각 @Test 메소드가 실행되기 전 반드시 실행되는 메소드, 주로 Set-up 코드에 활용
+	- @Before : @Test 메소드가 실행되기 전 반드시 실행되는 메소드, 주로 Set-up 코드에 활용
 	
-	- @After : 각 @Test 메소드가 실행된 후 반드시 실행되는 메소드, 주로 clear 코드에 활용
+	- @After : @Test 메소드가 실행된 후 반드시 실행되는 메소드, 주로 clear 코드에 활용
 
 	- @Ignore : 이 어노테이션이 선언된 메소드는 무시(Skip)
 
+```
+class MemberServiceTest {
+	MemberService memberService;
+	MemoryMemberRepository memberRepository;
+
+	@BeforeEach
+	public void beforeEach() {
+		memberRepository = new MemoryMemberRepository();
+		memberService = new MemberService(memberRepository);
+	}
+
+	@AfterEach
+	public void afterEach() {
+		memberRepository.clearStore();
+	}
+
+	@Test
+	public void 회원가입() throws Exception {
+		//Given
+		Member member = new Member();
+		member.setName("hello");
+		//When
+		Long saveId = memberService.join(member);
+		//Then
+		Member findMember = memberRepository.findById(saveId).get();
+		assertEquals(member.getName(), findMember.getName());
+	}
+
+	@Test
+	public void 중복_회원_예외() throws Exception {
+		//Given
+		Member member1 = new Member();
+		member1.setName("spring");
+		Member member2 = new Member();
+		member2.setName("spring");
+		//When
+		memberService.join(member1);
+		IllegalStateException e = assertThrows(IllegalStateException.class,() -> memberService.join(member2));//예외가 발생해야 한다.
+		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+	}
+}
+```
 
 ---
 ### 8. Spring Bean(component Scan VS 코드로 직접 등록)
