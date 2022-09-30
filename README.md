@@ -718,6 +718,12 @@ public class MemoryMemberRepository implements MemberRepository {}
 @Configuration
 public class SpringConfig {
 	
+	private final DataSource dataSource;
+
+	public SpringConfig(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
 	@Bean
 	public MemberService memberService() {
 		return new MemberService(memberRepository());
@@ -725,10 +731,13 @@ public class SpringConfig {
 
 	@Bean
 	public MemberRepository memberRepository() {
-		return new MemoryMemberRepository();
+		//return new MemoryMemberRepository();
+		return new JdbcMemberRepository(dataSource);
 	}
 }
 ```
+
+<img src="https://user-images.githubusercontent.com/101415950/193201763-6ca2a3d7-48b7-4b50-844c-371f2f44c85b.png" width="80%" height="80%">
 
 - Controller는 정형화된 모듈이므로 굳이 직접 Spring Bean에 등록하지 않고 component Scan 방식으로 진행한다.   
   (사용자의 요청에 적절한 서비스를 호출하여, 그 결과가 사용자에게 반환하는 코드를 구현하는 역할을 하기 때문)
@@ -738,6 +747,9 @@ public class SpringConfig {
 - 정형화 되지 않거나, 상황에 따라 구현 클래스를 변경해야 하는 경우에 사용(9장 DB 접근 기술 예제 참고)   
   (ex. 데이터 베이스 변경 : 순수 JDBC -> JPA)
 
+- 스프링의 DI를 이용하면 기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경할 수 있음   
+  -> 개방-폐쇄 원칙(OCP, Open-Closed Principle) : 확장에는 열려있고, 수정과 변경에는 닫혀있음
+
 ---
 ### 9. DB 접근 기술(JDBC, JPA)
 
@@ -745,11 +757,28 @@ public class SpringConfig {
 
 - 순수 JDBC(김영한 강사님이 노가다라고 말씀하심)
 
+	- JDBC는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바 API로 데이터 조회 및 수정 기능 등 제공
+
+	- connection 객체 : DB와 어플리케이션의 연결을 관리
+	
+	- prepareStatement 객체 : SQL문을 미리 생성하여 변수를 따로 입력하는 방식(SQL Injection 공격 방어)
+	
+	- ResultSet 객체 : SQL문 실행 결과값을 받는 객체
+	
+	- DB에서 정보를 가져올 때마다 연결 및 해제해야하는 번거로움과 서버 과부하, 속도 저하 문제 있음
+	
+	- 다른 기술에 비해 작성해야 할 사항이 많아 유지보수가 어렵다
+
 - 스프링 JDBC Template
 
 #### <JPA(Java Persistence API)>
 
 - JPA
+	- JPA는
+
+	- SQL문을 직접 java application 내에서 적을 경우가 적어짐
+	
+	- sql 구조를 java application 내에서 적용하지 않아도 됨
 
 - 스프링 데이터 JPA
 
