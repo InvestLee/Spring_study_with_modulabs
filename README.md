@@ -269,7 +269,13 @@ public class HelloController {
 
 
 
-#### <API 방식>
+#### <API 방식, Application Programming Interface>
+
+API는 소프트웨어가 다른 소프트웨어로부터 지정된 형식으로 명령을 받을 수 있는 수단
+
+프로그램들이 서로 상호작용하는 것을 도와주는 매개체 역할 수행
+
+어떤 프로그래밍 언어를 쓰든 무슨 프레임워크를 쓰든 API 폼에 맞춰서 개발
 
 - controller 구현(@ResponseBody 문자 반환)
 ```
