@@ -259,6 +259,8 @@ public class HelloController {
 
 ※ @RequestParam("name")은 url이 전달될 때 value가 담긴 name 파라미터를 받아올 때 사용, 즉 HTTP 요청 파라미터를 받기 위해 사용
 
+<img src="https://user-images.githubusercontent.com/101415950/193283358-25479663-8df8-4c2e-bf5c-884c994a6de3.png" width="50%" height="50%">
+
 - 동작 순서
 <img src="https://user-images.githubusercontent.com/101415950/192705339-75616c1c-d6fa-407e-83a0-4a3b196ed899.png" width="80%" height="80%">
 
