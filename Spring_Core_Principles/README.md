@@ -16,28 +16,16 @@
 
 ※ 인프런에서 김영한 강사님의 강의를 기반으로 작성된 글입니다.
 
-### 1. 스프링 설치법(For IntelliJ)
-스프링 부트 스타터 사이트에서 스프링 프로젝트 생성(https://start.spring.io)
+### 1. 스프링 vs 스프링부트
 
-(이클립스로 설치하는 경우는 https://wikidocs.net/160375 링크 참조)
-
-
-[Basic Setting]
-- Project - Gradle Project
-- Spring Boot - SNAPSHOT, M1 같은 미정식 버전을 제외한 최신 버전 사용 권장
-- Language - Java
-- Packaging - Jar
-- Java - 현재 자신의 개발 환경에 설치된 Java 버전 사용 권장
-
-[Project Metadata]
-- Group - 기업의 도메인 명 설정 (기업과 관련되지 않은 프로젝트 수행 시 자유롭게 설정)
-- Artifact - 빌드 결과물의 이름 설정
-
-[Dependencies]
-- Spring Web
-- Thymeleaf
-
-설정이 완료되면  Generate 버튼을 클릭하여 zip파일을 다운받은 후 압축 해제
+스프링 부트
+• 스프링을 편리하게 사용할 수 있도록 지원, 최근에는 기본으로 사용
+• 단독으로 실행할 수 있는 스프링 애플리케이션을 쉽게 생성
+• Tomcat 같은 웹 서버를 내장해서 별도의 웹 서버를 설치하지 않아도 됨
+• 손쉬운 빌드 구성을 위한 starter 종속성 제공
+• 스프링과 3rd parth(외부) 라이브러리 자동 구성
+• 메트릭, 상태 확인, 외부 구성 같은 프로덕션 준비 기능 제공
+• 관례에 의한 간결한 설정
 
 #### <IntelliJ에서 스프링 프로젝트 파일 열기>
 
