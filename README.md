@@ -1,4 +1,4 @@
-# backend_study_starting_with_spring_modulabs
+# 스프링 기본 개념 
 ---
 # 목차
 - 1. 스프링 설치법(For IntelliJ)
