@@ -1,9 +1,9 @@
-# Spring Containers and Spring Bean(제작중)
+# 스프링 핵심원리
 ---
 # 목차
-- 1. 스프링 설치법(For IntelliJ)
-- 2. Maven vs Gradle
-- 3. 스프링 프로젝트 구조
+- 1. 스프링 vs 스프링부트
+- 2. 객체지향원리와 스프링
+- 3. 스프링 컨테이너와 스프링 빈
 - 4. 정적 콘텐츠 vs MVC vs API
 - 5. Controller, Service , Repository
 - 6. DI, IoC
