@@ -38,7 +38,7 @@
 
 - application.properties나 application.yml을 통한 편리한 Configuration 설정
 
-- 관례에 의한 간결한 설정
+- 기본적으로 default로 미리 설정되어 있어 손쉽게 구동할 
 
 <br/>
 
