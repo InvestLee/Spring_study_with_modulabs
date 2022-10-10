@@ -4,13 +4,6 @@
 - 1. 스프링 vs 스프링부트
 - 2. 객체지향원리와 스프링
 - 3. 스프링 컨테이너와 스프링 빈
-- 4. 정적 콘텐츠 vs MVC vs API
-- 5. Controller, Service , Repository
-- 6. DI, IoC
-- 7. Test
-- 8. Spring Bean(component Scan VS 코드를 이용한 직접 등록)
-- 9. DB 접근 기술(JDBC, JPA)
-- 10. AOP
 ---
 # 내용
 
