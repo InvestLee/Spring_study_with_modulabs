@@ -175,6 +175,8 @@ class Lion implements Barkable {
 
 - 즉 객체 설계 시 인터페이스를 먼저 설계하고 구현 객체를 조립하는 방식으로 진행
 
+- 하지만 더 이상 기능을 확장할 가능성이 없는 경우에는 구현체를 직접 사용하여 추상화 비용 절제
+
 <img src="https://user-images.githubusercontent.com/101415950/194828466-43985fd8-d0a0-46b5-a268-bc9e7fb6cfed.png" width="80%" height="80%">
 
 ```
@@ -185,50 +187,72 @@ public class MemberService {
 ```
 
 ---
-### 3. 스프링 프로젝트 구조
+### 3. 객체지향 SOLID 원칙
 
-#### <전체적인 프로젝트 구조>
+#### <SRP: 단일 책임 원칙(single responsibility principle)>
 
-<img src="https://user-images.githubusercontent.com/101415950/192735277-c8a88b0f-3eff-4130-879f-8e4360e035ba.png" width="40%" height="40%">
+- 한 클래스는 하나의 책임만 가져야 한다. (하나의 책임 기준이 모호)
 
-1. src/main/java   
+- 이 기준은 변경으로 변경 발생 시 파급 효과가 적으면 이 원칙을 준수한 것
 
-   - java 파일을 작성하기 위한 공간으로 Controller, Service, Repository, Entity 파일 등이 속한 디렉토리   
+- 객체의 생성, 실행을 분리 등과 같이 책임 분리
 
-   - 이 디렉토리에 속한 <프로젝트명> + Application.java 파일은 프로그램 시작을 담당하는 파일
+#### <OCP: 개방-폐쇄 원칙 (Open/closed principle)>
 
-2. src/main/resources
+- 소프트웨어 클라이언트는 확장에 열려있으며 변경에는 닫혀 있음
 
-   - java 파일을 제외한 HTML, CSS, Javascript, 환경파일 등 작성하는 공간으로 static, templates 그리고 application.properties 파일이   
-     기본적으로 생성
+- 인터페이스를 구현한 새로운 클래스를 하나 만들어서 새로운 기능을 구현
 
-3. static
+- 아래 서비스는 구현 객체를 변경하기 위해 클라이언트 코드도 변경되는 케이스 => OCP 원칙 위배
 
-   - css, fonts, images, plugin, scripts 등의 정적 리소스 파일이 속한 디렉토리
+- 즉 객체를 생성하고 연관관계를 맺는 별도의 클래스가 필요
 
-4. templates
+```
+public class MemberService {
+	// private MemberRepository memberRepository = new MemoryMemberRepository();
+	private MemberRepository memberRepository = new JdbcMemberRepository();
+}
+```
 
-   - 사용자에게 화면을 출력하기 위한 HTML, JSP, Thymeleaf 등 자바 객체와 연동되는 templates 파일이 저장되는 디렉토리
+#### <LSP: 리스코프 치환 원칙 (Liskov substitution principle)>
 
-5. application.properties
+- 프로그램의 정확성을 위해 인터페이스 규약을 다 지키면서 인터페이스의 구현체를 구현해야함
 
-   - 프로젝트의 환경 설정, 데이터베이스 등의 설정을 저장하는 파일   
-     (Tomcat(WAS) 설정, 데이터베이스 관련 정보를 key-value 형식으로 지정 등)
+- 자동차 엑셀을 가속하는 기능인데 아반떼에서의 엑셀은 브레이크로 동작하면 LSP 위배
 
-   - 웹 애플리케이션을 실행하면 자동으로 로딩
+#### <ISP: 인터페이스 분리 원칙 (Interface segregation principle)>
 
-6. src/test/java
+- 인터페이스가 명확하고 대체 가능성이 높게 분리하는 원칙
 
-   - 테스트 코드를 작성하는 공간으로 JUnit과 스프링부트의 테스팅 도구를 사용하여 서버를 실행하지 않고 테스트가 가능
+- 자동차를 운전, 정비로 사용자를 운전자, 정비사로 분리
 
-   - 각각의 개발 단계에 알맞는 단위 테스트 및 통합 테스트를 진행하는 용도로 사용
+- 정비 인터페이스가 변해도 운전에 영향을 주지 않음
 
-7. build.gradle
+#### <DIP: 의존관계 역전 원칙 (Dependency inversion principle)>
 
-   - 환경설정 및 프로젝트를 위해 필요한 플러그인과 라이브러리를 기술하는 파일 (해당 글 2장 참고)
+- 구현체가 아닌 인터페이스에 의존해야 한다는 원칙
+
+- 이를 준수하여 구현체를 유연하게 변경 가능
+
+- 아래 예시의 서비스는 인터페이스에 의존하지만 구현 클래스에 동시에 의존
+
+- 즉 서비스 클라이언트가 구현 클래스를 직접 선택하므로 DIP 위배
+
+```
+public class MemberService {
+	// private MemberRepository memberRepository = new MemoryMemberRepository();
+	private MemberRepository memberRepository = new JdbcMemberRepository();
+}
+```
+
+#### <스프링과 SOLID 원칙>
+
+- 자바 코드만으로 OCP, DIP 원칙을 지키면서 개발을 진행하면 시간 소요 증가 및 코드가 복잡해짐
+
+- 스프링은 스프링 컨테이너를 제공하여 OCP, DIP, 다형성을 가능하게 하고 편리하게 개발하도록 지원 
 
 ---
-### 4. 정적 콘텐츠 vs MVC vs API
+### 4. 객체지향 SOLID 원칙
 
 #### <정적 콘텐츠>
 
