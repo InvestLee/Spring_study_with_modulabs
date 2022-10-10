@@ -9,6 +9,7 @@
 # 내용
 
 ※ 인프런에서 김영한 강사님의 강의를 기반으로 제가 이해한 내용을 작성된 글입니다.   
+https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/
 
 ### 1. 스프링 vs 스프링부트
 
