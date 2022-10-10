@@ -43,7 +43,7 @@
 
 객체 지향 프로그래밍은 프로그램을 명령어의 목록으로 인식하기보다 여러 개의 독립적인 객체들의 상호작용을 통해 프로그램을 유연하고 변경 용이하게 만드는 프로그래밍을 의미
 
-클라이언트를 요청하는 객체, 서버를 응답하는 객체로 서로 상호작용 수행
+클라이언트 객체는 요청하는 객체, 서버 객체는 응답하는 객체로 서로 상호작용 
 
 #### <객체 지향의 특징>
 
@@ -165,15 +165,22 @@ class Lion implements Barkable {
 
 <img src="https://user-images.githubusercontent.com/101415950/194825817-4dafaf82-2947-46c0-bd12-1acea2ffd7d1.png" width="80%" height="80%">
 
-- 기획자(클라이언트)는 대본의 역할(인터페이스)만 알아도 전체적인 공연 기획이 가능
+- 이와 같이 역할과 구현을 구분하면 변경에 대단히 유연해짐
 
-- 공연 기획은 어떤 배우(구현, class)를 배정하든 영향을 받지 않음
+- 기획자(클라이언트)는 대상의 역할(인터페이스)만 알면 그 기능을 구현할 수 있음
 
-- 즉 객체 설계 시 인터페이스를 먼저 설계하고, 그에 맞는 구현체를 조립하는 방식으로 개발 진행
+- 배우(Class, 구현 대상)은 개발이 완료되고 정해도 되고 배우가 변경되어도 영향을 받지 않음
 
-- 오버라이딩 등을 다형성을 사용하여 구현체를 실행 시점에서 유연하게 변경 가능
+- 즉 객체 설계 시 인터페이스를 먼저 설계하고 구현 객체를 조립하는 방식으로 진행
 
-<img src="https://user-images.githubusercontent.com/101415950/194828287-0f0bc0d6-5286-49d6-8225-22d96cd44f95.png" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/101415950/194828466-43985fd8-d0a0-46b5-a268-bc9e7fb6cfed.png" width="80%" height="80%">
+
+```
+public class MemberService {
+	// private MemberRepository memberRepository = new MemoryMemberRepository();
+	private MemberRepository memberRepository = new JdbcMemberRepository();
+}
+```
 
 ---
 ### 3. 스프링 프로젝트 구조
