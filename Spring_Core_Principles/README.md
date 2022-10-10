@@ -165,6 +165,8 @@ class Lion implements Barkable {
 
 <img src="https://user-images.githubusercontent.com/101415950/194825817-4dafaf82-2947-46c0-bd12-1acea2ffd7d1.png" width="80%" height="80%">
 
+
+[결론]
 - 이와 같이 역할과 구현을 구분하면 변경에 대단히 유연해짐
 
 - 기획자(클라이언트)는 대상의 역할(인터페이스)만 알면 그 기능을 구현할 수 있음
