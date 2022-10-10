@@ -3,7 +3,8 @@
 # 목차
 - 1. 스프링 vs 스프링부트
 - 2. 객체지향원리와 스프링
-- 3. 스프링 컨테이너와 스프링 빈
+- 3. 객체지향 SOLID 원칙
+- 4. 스프링 컨테이너와 스프링 빈
 ---
 # 내용
 
@@ -135,23 +136,32 @@ class Lion implements Barkable {
 }
 ```
 
+#### <스프링과 다형성>
 
-#### <gradle 라이브러리 구성>
+- 스프링은 IoC와 DI를 통해 역할과 구현을 분리하도록 지원하여 다형성을 극대화하는 프레임워크
 
-Package, Artifact, Version 으로 구성
-- group : 소스코드가 작성된 패키지 명
-- Artifact : 라이브러리의 고유한 명칭
-- version : 버전 명칭(생략 시 최신 버전)
+- 마치 드라마 역할에 따른 배우를 선택하듯이 Lego를 조립하듯이 구현을 편리하게 변경 가능
 
-라이브러리 앞에 적용된 명령어는 라이브러리가 적용될 Scope를 의미
-- implementation : 전 범위에 적용
-- testImplementation : 테스트 시에만 적용
-- debugimplementation : 디버그 모드에서만 적용
-- androidTestimplementation : 안드로이스 테스트 시에만 적용
+- 이를 이해하기 위해 아래 예제를 통해 먼저 역할과 구현을 구분할 필요가 있음
 
-implementation 'org.springframework.boot:spring-boot-starter'의 뜻은 아래와 같음
+<br/>
+[운전자와 자동차]
 
--> org.springframework.boot 패키지에서 spring-boot-starter 라이브러리의 최신버전을 전범위에 적용 
+- K3에서 아반떼로 바뀌어도 운전 면허를 새로 따거나 운전 방법을 새로 배우지 않음
+
+- 즉 운전자 역할(인터페이스)와 자동차 역할(인터페이스)의 변경은 일어나지 않음
+
+<img src="https://user-images.githubusercontent.com/101415950/194824932-ff7b9584-e8e5-4bf2-95db-41ebff92d545.png" width="80%" height="80%">
+
+[공연 무대]
+
+- 로미오 역할이 장동건에서 원빈으로 바껴도 로미오의 대사가 변경이 되지 않음
+
+- 줄리엣 역할이 김태희에서 송혜교로 바뀌어도 로이오의 행위 대본은 변경되지 않음
+
+- 즉 로미오 역할(인터페이스)와 줄리엣 역할(인터페이스)의 변경은 일어나지 않음
+
+<img src="https://user-images.githubusercontent.com/101415950/194825817-4dafaf82-2947-46c0-bd12-1acea2ffd7d1.png" width="80%" height="80%">
 
 ---
 ### 3. 스프링 프로젝트 구조
