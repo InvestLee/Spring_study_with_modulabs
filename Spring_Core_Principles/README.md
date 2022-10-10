@@ -45,64 +45,36 @@
 <br/>
 
 ---
-### 2. Maven vs Gradle
+### 2. 객체지향원리와 스프링
 
-maven과 gradle은 빌드(소스 코드 파일을 컴퓨터에서 실행할 수 있는 독립 소프트웨어 가공물(Artifact)로 변환시키는 과정)를 자동화하는 Tool
+#### <객체 지향의 특징>
 
-외부 소스 코드(외부 라이브러리)를 자동으로 추가하고 관리(버전도 자동으로 업데이트)
+- 추상화
 
-[빌드의 과정]
-1. 소스 코드를 컴파일
-2. 테스트 코드를 컴파일
-3. 테스트 코드를 실행
-4. 테스트 코드 리포트 작성
-5. 기타 추가로 설정한 작업 진행(ex : 소나 큐브에 코드 정적 분석 위임 등)
-6. 패키징 수행(java 라이브러리 외 다른 사람이 만들어 놓은 오픈소스를 작성한 코드와 묶는 작업)
-7. 최종 sw 결과물(Artifact) 생성
+	- 객체의 공통된 속성이나 메소드를 추출 
+	
+	- 추상클래스, 인터페이스 등 미완성 설계도를 통해 기본 틀을 잡는 
 
-하기 코드는 프로젝트에 필요한 라이브러리를 정의할 때 Maven과 Gradle의 작성법에 대한 차이를 예시로 듬
 
-[maven]
-```
-<dependencies>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter</artifactId>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-      </dependency>
-<dependencies> 
-```
+- 캡슐화
 
-[gradle]
-```
-dependencies {
-      implementation 'org.springframework.boot:spring-boot-starter'
-      testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-```
+	- 특정 메서드와 속성을 접근제어자(private 등)을 통해 숨기는 특성
+	
+	- 데이터 값을 외부에서 직접 접근하는 것을 방지
+	
+	- public method로 값을 통제
 
-#### <maven이 아닌 gradle을 선택한 이유>
+- 상속
 
-- maven은 pom.xml(Project Object Model) 파일에서 build를 xml로 정의하므로 구조화하기 쉽지만 문서의 양이 비대해지므로   
+	- 자식(서브) 클래스가 부모(슈퍼) 클래스의 기능과 메서드를 물려받는 것
 
-  JVM 기반의 grooby를 사용하는 gradle에 비해 설정 내용이 길어지고 가독성이 떨어짐
+	- 코드의 재사용성 증진 및 코드 중복 제거
 
-- gradle이 바뀐 파일들만 빌드하는 점진적 빌드 방식과 빌드 결과물을 저장하여 한번 빌드된 프로젝트의 다음 빌드는 매우 적은 시간이    
+- 다형성
 
-  소요되는 Daemon Process 그리고 Build Cashe를 사용하므로 maven에 비해 10~100배 가량 빌드 속도가 빠름
-
-- maven은 라이브러리가 추가되거나 각 라이브러리가 서로 다른 버전의 라이브러리를 참조하는 종속성을 가지고 있을 경우 관리가 어려움   
-
-   -> 상속 구조를 사용하므로 특정 설정을 몇몇 모듈에서만 공통으로 사용하기 위해 불필요한 부모 프로젝트를 생성해야 하여 상속
-
-   -> 설정이 다른 프로젝트가 하나라도 있으면 그 프로젝트는 상속할 수 없으므로 거의 모든 설정을 중복하여 작성해야함
-
-- gradle은 설정 주입시 프로젝트의 조건을 체크할 수 있으므로 프로젝트 별로 유연하게 설정할 수 있음 (settings.gradle에서 설정) 
-
-   -> 구성 주입 방식을 통해 조건에 따라 특정 프로젝트에만 주입하므로 불필요한 프로젝트가 필요없음
+ 	- 서로 다른 클래스의 객체가 동일한 요청을 받았을 때 각자의 방식으로 동작하는 능력
+ 	
+	- Overriding, Overloading이 대표적인 케이스
 
 
 #### <gradle 라이브러리 구성>
