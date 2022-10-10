@@ -50,6 +50,26 @@
 	
 	- 추상클래스, 인터페이스 등 미완성 설계도를 통해 기본 틀을 잡는 특성
 
+```
+abstract class Predator{
+    abstract String getFood();
+
+    void printFood() {
+        System.out.printf("my food is %s\n", getFood());
+    }
+
+    static int LEG_COUNT = 4;  // 추상 클래스의 상수는 static 선언이 필요하다.
+    static int speed() {
+        return LEG_COUNT * 30;
+    }
+}
+
+class Tiger extends Predator{
+    public String getFood(){
+    	return "meat"
+    }
+}
+```
 
 - 캡슐화
 
@@ -59,11 +79,25 @@
 	
 	- public method로 값을 통제
 
+```
+public class Suit{
+    private String name;
+
+    public Suit(String name){
+    	this.name = name;
+    }
+}
+```
+
 - 상속
 
 	- 자식(서브) 클래스가 부모(슈퍼) 클래스의 기능과 메서드를 물려받는 것
 
 	- 코드의 재사용성 증진 및 코드 중복 제거
+
+```
+추상화 코드 참조
+```
 
 - 다형성
 
@@ -72,6 +106,30 @@
 	- Overriding, Overloading이 대표적인 케이스
 
 	- 스프링에서는 다형성을 가장 중요하게 사용
+
+```
+interface Barkable {
+    void bark();
+}
+
+class Tiger implements Barkable {
+    public void bark() {
+        System.out.println("어흥");
+    }
+}
+
+class Lion implements Barkable {
+    public void bark() {
+        System.out.println("으르렁");
+    }
+    
+    public void bark(int n) {
+        for (int i = 0; i < n ; i++){
+		System.out.println("으르렁");
+	}
+    }
+}
+```
 
 
 #### <gradle 라이브러리 구성>
